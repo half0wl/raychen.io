@@ -2,9 +2,7 @@ baseURL = 'https://raychen.io'
 languageCode = 'en-us'
 title = 'Ray Chen'
 theme = 'raychen.io'
-disableKinds = ["term"]
-[taxonomies]
-  tag = 'tags'
+disableKinds = ["term", "taxonomy"]
 [author]
   name = 'Ray Chen'
 [permalinks]
