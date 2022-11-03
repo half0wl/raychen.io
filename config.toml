@@ -1,0 +1,25 @@
+baseURL = 'https://raychen.io'
+languageCode = 'en-us'
+title = 'Ray Chen'
+theme = 'raychen.io'
+disableKinds = ["term"]
+[taxonomies]
+  tag = 'tags'
+[author]
+  name = 'Ray Chen'
+[permalinks]
+  '/articles' = '/articles/:year/:title/'
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = 'monokai'
+    tabWidth = 4
+

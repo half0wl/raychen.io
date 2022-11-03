@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main aria-role="main">
+  <ul class="listing">
+  {{ range (where .Site.RegularPages "Type" "articles") }}
+  <li>
+    <a href="{{.Permalink}}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+  </ul>
+</main>
+{{ end }}
