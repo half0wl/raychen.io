@@ -126,10 +126,18 @@ code:not([data-lang]) {
   background-color: #000;
 }
 
+.highlight {
+  overflow: scroll;
+}
+
 .highlight pre {
   padding: 1em;
-  overflow: scroll;
   font-size: 1rem;
+}
+
+.highlight code {
+  padding: unset;
+  background-color: unset;
 }
 
 blockquote {

@@ -15,9 +15,9 @@ disableKinds = ["term", "taxonomy"]
     hl_Lines = ''
     lineAnchors = ''
     lineNoStart = 1
-    lineNos = false
+    lineNos = true
     lineNumbersInTable = true
     noClasses = true
-    style = 'monokai'
+    style = 'paraiso-dark'
     tabWidth = 4
 
