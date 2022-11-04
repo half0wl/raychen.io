@@ -10,20 +10,11 @@ body {
   color: #fff;
 }
 
+/**
+ * Wraps main content div for spacing out footer.
+ */
 .content-wrapper {
   min-height: calc(100vh - 95px);
-}
-
-footer {
-  padding-top: 1em;
-  height: 20px;
-  color: #aaa;
-  font-size: 0.8rem;
-  text-align: right;
-}
-
-footer a {
-  color: #aaa;
 }
 
 a {
@@ -31,15 +22,14 @@ a {
   text-underline-offset: 3px;
 }
 
-h1, h2, h3 {
-  color: #fff;
-}
-
 header {
-  margin-bottom: 2em;
+  display: flex;
+  margin-bottom: 1em;
   font-family: monospace;
   font-size: 0.8rem;
   font-weight: 400;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 header h1 a,
@@ -54,6 +44,18 @@ header .about a {
 header a,
 h1.article-title a {
   text-decoration: none;
+}
+
+footer {
+  padding-top: 1em;
+  height: 20px;
+  color: #aaa;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+footer a {
+  color: #aaa;
 }
 
 hr {
@@ -107,6 +109,18 @@ section.single-article .article-content {
   text-align: justify;
 }
 
+section.single-article .article-content h1 {
+  font-size: 1.6rem;
+}
+
+section.single-article .article-content h2 {
+  font-size: 1.4rem;
+}
+
+section.single-article .article-content h3 {
+  font-size: 1.2rem;
+}
+
 code:not([data-lang]) {
   padding: 5px;
   background-color: #000;
@@ -115,5 +129,43 @@ code:not([data-lang]) {
 .highlight pre {
   padding: 1em;
   overflow: scroll;
-  font-size: 1.2rem;
+  font-size: 1rem;
+}
+
+blockquote {
+  background: #2f2f2f;
+  border-left: 2px solid #ccc;
+  margin: 0em;
+  padding: 0.3em 0.6em;
+}
+
+blockquote p {
+  display: inline-block;
+}
+
+/**
+ * Image positioning. Usage:
+ *     ```
+ *     ![your_img](/img/your_img.png#center)
+ *     ![your_img](/img/your_img.png#floatleft)
+ *     ![your_img](/img/your_img.png#floatright)
+ *     ```
+ * Taken from http://www.ebadf.net/2016/10/19/centering-images-in-hugo/
+ */
+img[src$='#center'] {
+  display: block;
+  margin: 0.7rem auto;
+  max-width: 100%;
+}
+
+img[src$='#floatleft'] {
+  float: left;
+  margin: 0.7rem;
+  max-width: 100%;
+}
+
+img[src$='#floatright'] {
+  float: right;
+  margin: 0.7rem;
+  max-width: 100%;
 }
