@@ -33,12 +33,9 @@ header {
 }
 
 header h1 a,
+header .about a,
 header .about {
-  color: #dbdbdb;
-}
-
-header .about a {
-  color: #aaa;
+  color: #508cb0;
 }
 
 header a,
@@ -92,7 +89,7 @@ section.single-article h1.article-title,
 section.single-article h1.article-title a
 {
   font-size: 1.6rem;
-  color: #638fbd;
+  color: #fff;
 }
 
 section.single-article .article-pub-date {
@@ -177,4 +174,10 @@ img[src$='#floatright'] {
   float: right;
   margin: 0.7rem;
   max-width: 100%;
+}
+
+@media print {
+  .highlight {
+    overflow: unset;
+  }
 }
