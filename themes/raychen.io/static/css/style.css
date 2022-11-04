@@ -47,6 +47,7 @@ h1.article-title a {
 }
 
 footer {
+  font-family: monospace;
   padding-top: 1em;
   height: 20px;
   color: #aaa;
