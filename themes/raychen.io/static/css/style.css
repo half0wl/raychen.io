@@ -14,7 +14,7 @@ body {
  * Wraps main content div for spacing out footer.
  */
 .content-wrapper {
-  min-height: calc(100vh - 95px);
+  min-height: calc(100vh - 7em);
 }
 
 a {
@@ -23,19 +23,17 @@ a {
 }
 
 header {
-  display: flex;
-  margin-bottom: 1em;
   font-family: monospace;
   font-size: 0.8rem;
-  font-weight: 400;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
-header h1 a,
-header .about a,
-header .about {
-  color: #dbdbdb;
+header p,
+header p a {
+  color: #aaa;
+}
+
+header h1 a {
+  color: #8ba6f7;
 }
 
 header a,
@@ -45,11 +43,15 @@ h1.article-title a {
 
 footer {
   font-family: monospace;
-  padding-top: 1em;
+  padding-top: 1.2em;
   height: 20px;
   color: #aaa;
   font-size: 0.8rem;
   text-align: right;
+}
+
+footer p {
+  margin-top: 1.5em;
 }
 
 footer a {
@@ -61,7 +63,7 @@ hr {
 }
 
 hr.header-sep {
-  margin-top: -0.5em;
+  margin-top: 1em;
 }
 
 main {
@@ -183,5 +185,11 @@ img[src$='#floatright'] {
 @media print {
   .highlight {
     overflow: unset;
+  }
+}
+
+@media (max-width: 1281px) {
+  img[src$='nofloat90w'] {
+    max-width: 100%;
   }
 }
