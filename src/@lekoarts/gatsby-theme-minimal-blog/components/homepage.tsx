@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Text } from "theme-ui";
 import { ReactNode } from "react";
 import { HeadFC, Link } from "gatsby";
 import Layout from "@lekoarts/gatsby-theme-minimal-blog/src/components/layout";
@@ -36,6 +36,10 @@ export type MBHomepageProps = {
   }[]
 }
 
+const Highlight = ({ children }: { children: ReactNode }) => {
+  return <strong style={{ color: "rgb(255, 146, 112)" }}>{children}</strong>;
+};
+
 const Homepage = ({ posts }: MBHomepageProps) => {
   const { basePath, tagsPath } = useMinimalBlogConfig()
   const { siteTitle } = useSiteMetadata()
@@ -44,7 +48,16 @@ const Homepage = ({ posts }: MBHomepageProps) => {
     <Layout>
       <h1 sx={visuallyHidden}>{siteTitle}</h1>
       <section sx={{ mb: [4, 5, 5], p: { fontSize: [1, 2, 3], mt: 2 }, variant: `section_hero` }}>
-        <Hero />
+        <Text sx={{ fontWeight: 600, fontSize: [4, 5, 5], color: `heading` }}>
+          Hi. I'm <Highlight>Ray</Highlight>.
+        </Text>
+        <br/>
+        <br/>
+        <Text sx={{ fontSize: [3, 3, 3], color: `heading` }}>
+          I'm passionate about <Highlight>software and technology</Highlight>
+          ; I love <Highlight>building stuff</Highlight> and <Highlight>writing</Highlight>.
+          This is my personal scratchpad filled with <Highlight>random bits of knowledge</Highlight>.
+        </Text>
       </section>
       <Title text="Writing">
         <Link to={replaceSlashes(`/${basePath}/${tagsPath}`)}>View tags &rarr;</Link>

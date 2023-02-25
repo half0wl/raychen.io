@@ -21,7 +21,7 @@ const HeaderTitle = () => {
       sx={{ color: `heading`, textDecoration: `none` }}
     >
       <div sx={{ my: 0, fontWeight: `semibold`, fontSize: [3, 4] }}>
-        🦉 Ray Chen
+        🦉 ~rc
       </div>
     </Link>
   );
