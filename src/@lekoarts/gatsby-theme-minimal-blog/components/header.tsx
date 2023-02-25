@@ -5,6 +5,11 @@ import Navigation from "@lekoarts/gatsby-theme-minimal-blog/src/components/navig
 import HeaderExternalLinks from "@lekoarts/gatsby-theme-minimal-blog/src/components/header-external-links"
 import HeaderTitle from "./header-title"
 
+/**
+ * Shadowed component with the following tweaks:
+ *   - Use shadowed HeaderTitle
+ */
+
 const Header = () => {
   const { navigation: nav } = useMinimalBlogConfig()
 

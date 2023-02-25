@@ -14,6 +14,11 @@ import List from "./list";
 import Hero from "../texts/hero.mdx";
 import Bottom from "../texts/bottom.mdx";
 
+/**
+ * Shadowed component with the following tweaks:
+ *   - Remove light/dark mode toggle
+ */
+
 export type MBHomepageProps = {
   posts: {
     slug: string
