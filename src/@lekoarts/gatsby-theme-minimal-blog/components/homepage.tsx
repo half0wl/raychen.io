@@ -17,6 +17,8 @@ import Bottom from "../texts/bottom.mdx";
 /**
  * Shadowed component with the following tweaks:
  *   - Remove light/dark mode toggle
+ *   - Change Title text ("Latest Posts" -> "Writing")
+ *   - Remove <Bottom /> component (originally for "Projects" section in theme)
  */
 
 export type MBHomepageProps = {
@@ -41,16 +43,13 @@ const Homepage = ({ posts }: MBHomepageProps) => {
   return (
     <Layout>
       <h1 sx={visuallyHidden}>{siteTitle}</h1>
-      <section sx={{ mb: [5, 6, 7], p: { fontSize: [1, 2, 3], mt: 2 }, variant: `section_hero` }}>
+      <section sx={{ mb: [3, 4, 4], p: { fontSize: [1, 2, 3], mt: 2 }, variant: `section_hero` }}>
         <Hero />
       </section>
-      <Title text="Latest Posts">
+      <Title text="Writing">
         <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>Read all posts</Link>
       </Title>
       <Listing posts={posts} showTags={true} />
-      <List>
-        <Bottom />
-      </List>
     </Layout>
   )
 }
