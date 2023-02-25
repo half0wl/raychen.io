@@ -23,6 +23,8 @@ the [`highlight_string`](https://www.php.net/manual/en/function.highlight-string
 function:
 
 ```php
+<?php
+
 function d($obj): string {
     return highlight_string("<?php\n" . print_r($obj, true) . "\n", true);
 }
