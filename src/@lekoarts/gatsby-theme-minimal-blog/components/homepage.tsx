@@ -19,6 +19,7 @@ import Hero from "../texts/hero.mdx";
  *   - Change Title text ("Latest Posts" -> "Writing")
  *   - Remove <Bottom /> component (originally for "Projects" section in theme)
  *   - Turn "Read all posts" into "View all tags"
+ *   - Hardcode hero section instead of using content from hero.mdx
  */
 
 export type MBHomepageProps = {
