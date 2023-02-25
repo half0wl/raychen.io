@@ -18,7 +18,7 @@ import Hero from "../texts/hero.mdx";
  *   - Adjust hero margin (original: mb=[5, 6, 7])
  *   - Change Title text ("Latest Posts" -> "Writing")
  *   - Remove <Bottom /> component (originally for "Projects" section in theme)
- *   - Turn "Read all posts" into "View topics" (tags)
+ *   - Turn "Read all posts" into "View all tags"
  */
 
 export type MBHomepageProps = {
@@ -43,11 +43,11 @@ const Homepage = ({ posts }: MBHomepageProps) => {
   return (
     <Layout>
       <h1 sx={visuallyHidden}>{siteTitle}</h1>
-      <section sx={{ mb: [3, 4, 4], p: { fontSize: [1, 2, 3], mt: 2 }, variant: `section_hero` }}>
+      <section sx={{ mb: [4, 5, 5], p: { fontSize: [1, 2, 3], mt: 2 }, variant: `section_hero` }}>
         <Hero />
       </section>
       <Title text="Writing">
-        <Link to={replaceSlashes(`/${basePath}/${tagsPath}`)}>View topics &rarr;</Link>
+        <Link to={replaceSlashes(`/${basePath}/${tagsPath}`)}>View tags &rarr;</Link>
       </Title>
       <Listing posts={posts} showTags={true} />
     </Layout>
