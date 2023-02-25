@@ -20,6 +20,7 @@ import Bottom from "../texts/bottom.mdx";
  *   - Adjust hero margin (original: mb=[5, 6, 7])
  *   - Change Title text ("Latest Posts" -> "Writing")
  *   - Remove <Bottom /> component (originally for "Projects" section in theme)
+ *   - Turn "Read all posts" into "View topics" (tags)
  */
 
 export type MBHomepageProps = {
@@ -38,7 +39,7 @@ export type MBHomepageProps = {
 }
 
 const Homepage = ({ posts }: MBHomepageProps) => {
-  const { basePath, blogPath } = useMinimalBlogConfig()
+  const { basePath, tagsPath } = useMinimalBlogConfig()
   const { siteTitle } = useSiteMetadata()
 
   return (
@@ -48,7 +49,7 @@ const Homepage = ({ posts }: MBHomepageProps) => {
         <Hero />
       </section>
       <Title text="Writing">
-        <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>Read all posts</Link>
+        <Link to={replaceSlashes(`/${basePath}/${tagsPath}`)}>View topics &rarr;</Link>
       </Title>
       <Listing posts={posts} showTags={true} />
     </Layout>
