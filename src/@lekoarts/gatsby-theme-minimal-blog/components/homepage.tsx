@@ -10,9 +10,7 @@ import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-s
 import replaceSlashes from "@lekoarts/gatsby-theme-minimal-blog/src/utils/replaceSlashes";
 import { visuallyHidden } from "@lekoarts/gatsby-theme-minimal-blog/src/styles/utils";
 import Seo from "@lekoarts/gatsby-theme-minimal-blog/src/components/seo";
-import List from "./list";
 import Hero from "../texts/hero.mdx";
-import Bottom from "../texts/bottom.mdx";
 
 /**
  * Shadowed component with the following tweaks:
