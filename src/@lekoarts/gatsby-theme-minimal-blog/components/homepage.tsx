@@ -17,6 +17,7 @@ import Bottom from "../texts/bottom.mdx";
 /**
  * Shadowed component with the following tweaks:
  *   - Remove light/dark mode toggle
+ *   - Adjust hero margin (original: mb=[5, 6, 7])
  *   - Change Title text ("Latest Posts" -> "Writing")
  *   - Remove <Bottom /> component (originally for "Projects" section in theme)
  */
