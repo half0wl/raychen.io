@@ -4,6 +4,7 @@ import HomepageComponent, { Head } from "@lekoarts/gatsby-theme-minimal-blog-cor
 /**
  * Shadowed component with the following tweaks:
  *   - Remove limit on allPost
+ *   - Support pinning posts
  */
 
 export default HomepageComponent
@@ -23,6 +24,15 @@ export const query = graphql`
         tags {
           name
           slug
+        }
+        ... on MdxPost {
+          parent {
+            ... on Mdx {
+              frontmatter {
+                featured
+              }
+            }
+          }
         }
       }
     }

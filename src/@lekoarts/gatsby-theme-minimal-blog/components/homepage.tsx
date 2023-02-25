@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { jsx, Text } from "theme-ui";
-import { ReactNode } from "react";
 import { HeadFC, Link } from "gatsby";
 import Layout from "@lekoarts/gatsby-theme-minimal-blog/src/components/layout";
 import Title from "@lekoarts/gatsby-theme-minimal-blog/src/components/title";
-import Listing from "@lekoarts/gatsby-theme-minimal-blog/src/components/listing";
+import Listing from "./listing";
 import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config";
 import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata";
 import replaceSlashes from "@lekoarts/gatsby-theme-minimal-blog/src/utils/replaceSlashes";
 import { visuallyHidden } from "@lekoarts/gatsby-theme-minimal-blog/src/styles/utils";
 import Seo from "@lekoarts/gatsby-theme-minimal-blog/src/components/seo";
+import { Highlight } from "../utils"
 import Hero from "../texts/hero.mdx";
 
 /**
@@ -20,6 +20,7 @@ import Hero from "../texts/hero.mdx";
  *   - Remove <Bottom /> component (originally for "Projects" section in theme)
  *   - Turn "Read all posts" into "View all tags"
  *   - Hardcode hero section instead of using content from hero.mdx
+ *   - Support pinning posts
  */
 
 export type MBHomepageProps = {
@@ -34,12 +35,13 @@ export type MBHomepageProps = {
       name: string
       slug: string
     }[]
+    parent: {
+      frontmatter: {
+        [key: string]: any
+      }
+    }
   }[]
 }
-
-const Highlight = ({ children }: { children: ReactNode }) => {
-  return <strong style={{ color: "rgb(255, 146, 112)" }}>{children}</strong>;
-};
 
 const Homepage = ({ posts }: MBHomepageProps) => {
   const { basePath, tagsPath } = useMinimalBlogConfig()
