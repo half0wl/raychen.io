@@ -57,7 +57,10 @@ const Homepage = ({ posts }: MBHomepageProps) => {
         <Text sx={{ fontSize: [3, 3, 3], color: `heading` }}>
           I'm passionate about <Highlight>software and technology</Highlight>
           ; I love <Highlight>building stuff</Highlight> and <Highlight>writing</Highlight>.
-          This is my personal scratchpad filled with <Highlight>random bits of knowledge</Highlight>.
+          <br/>
+          This is my <Highlight>personal scratchpad</Highlight> filled with
+          <Highlight> ideas</Highlight>, <Highlight>notes</Highlight>,
+          and <Highlight>random bits of knowledge</Highlight>.
         </Text>
       </section>
       <Title text="Writing">
