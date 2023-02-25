@@ -23,14 +23,15 @@ const config: GatsbyConfig = {
       // See the theme's README for all available options
       options: {
         formatString: 'DD/MM/YYYY',
+        blogPath: '/writing',
         externalLinks: [
-          {
-            name: `Email (ray@raychen.io)`,
-            url: `mailto:ray@raychen.io`,
-          },
           {
             name: `GitHub (@half0wl)`,
             url: `https://github.com/half0wl`,
+          },
+          {
+            name: `Email (ray@raychen.io)`,
+            url: `mailto:ray@raychen.io`,
           },
         ],
       },
