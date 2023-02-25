@@ -4,7 +4,7 @@ import { lightThemeVars, darkThemeVars } from "../utils/prism-themes"
 
 const theme = merge(tailwind, {
   config: {
-    initialColorModeName: `light`,
+    initialColorModeName: `dark`,
   },
   colors: {
     primary: tailwind.colors.purple[7],
