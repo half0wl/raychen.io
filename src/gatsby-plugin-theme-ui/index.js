@@ -1,6 +1,6 @@
 import { merge } from "theme-ui"
 import tailwind from "@theme-ui/preset-tailwind"
-import { lightThemeVars, darkThemeVars } from "../utils/prism-themes"
+import { lightThemeVars, darkThemeVars } from "@lekoarts/gatsby-theme-minimal-blog/src/utils/prism-themes"
 
 const theme = merge(tailwind, {
   config: {
