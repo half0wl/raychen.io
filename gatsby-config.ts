@@ -15,7 +15,7 @@ const config: GatsbyConfig = {
     siteDescription: `Random bits of knowledge.`,
     siteLanguage: `en`,
     author: `Ray Chen`,
-    version: process.env.CF_PAGES_COMMIT_SHA ?? `local`,
+    version: process.env.COMMIT_SHA ?? `local`,
   },
   trailingSlash: `never`,
   plugins: [
