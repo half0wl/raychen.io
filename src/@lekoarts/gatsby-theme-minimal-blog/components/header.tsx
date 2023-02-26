@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, Flex } from "theme-ui"
-import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config"
-import Navigation from "@lekoarts/gatsby-theme-minimal-blog/src/components/navigation"
-import HeaderExternalLinks from "@lekoarts/gatsby-theme-minimal-blog/src/components/header-external-links"
-import HeaderTitle from "./header-title"
+import { jsx, Flex } from 'theme-ui'
+import useMinimalBlogConfig from '@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config'
+import Navigation from '@lekoarts/gatsby-theme-minimal-blog/src/components/navigation'
+import HeaderExternalLinks from '@lekoarts/gatsby-theme-minimal-blog/src/components/header-external-links'
+import HeaderTitle from './header-title'
 
 /**
  * Shadowed component with the following tweaks:
@@ -27,7 +27,7 @@ const Header = () => {
           justifyContent: `space-between`,
           mt: 3,
           color: `secondary`,
-          a: { color: `secondary`, ":hover": { color: `heading` } },
+          a: { color: `secondary`, ':hover': { color: `heading` } },
           flexFlow: `wrap`,
         }}
       >

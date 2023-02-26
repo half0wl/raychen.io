@@ -38,11 +38,7 @@ const BlogListItem = ({
       to={post.slug}
       sx={(t) => ({ ...t.styles?.a, fontSize: [1, 2, 3], color: `text` })}
     >
-      {featured ? (
-        <Highlight>📌 {post.title}</Highlight>
-      ) : (
-        post.title
-      )}
+      {featured ? <Highlight>📌 {post.title}</Highlight> : post.title}
     </Link>
     <p
       sx={{

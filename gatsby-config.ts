@@ -1,5 +1,5 @@
-import type { GatsbyConfig, PluginRef } from "gatsby"
-import "dotenv/config"
+import type { GatsbyConfig, PluginRef } from 'gatsby'
+import 'dotenv/config'
 
 const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
 
@@ -89,7 +89,10 @@ const config: GatsbyConfig = {
             serialize: ({
               query: { site, allPost },
             }: {
-              query: { allPost: IAllPost; site: { siteMetadata: ISiteMetadata } }
+              query: {
+                allPost: IAllPost
+                site: { siteMetadata: ISiteMetadata }
+              }
             }) =>
               allPost.nodes.map((post) => {
                 const url = site.siteMetadata.siteUrl + post.slug
@@ -101,7 +104,7 @@ const config: GatsbyConfig = {
                   excerpt: post.excerpt,
                   url,
                   guid: url,
-                  custom_elements: [{ "content:encoded": content }],
+                  custom_elements: [{ 'content:encoded': content }],
                 }
               }),
             query: `{

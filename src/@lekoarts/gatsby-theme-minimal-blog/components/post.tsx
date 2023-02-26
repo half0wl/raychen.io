@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import type { HeadFC, PageProps } from "gatsby"
-import * as React from "react"
-import { jsx, Heading } from "theme-ui"
-import Layout from "@lekoarts/gatsby-theme-minimal-blog/src/components/layout";
-import ItemTags from "./item-tags"
-import Seo from "@lekoarts/gatsby-theme-minimal-blog/src/components/seo";
-import PostFooter from "@lekoarts/gatsby-theme-minimal-blog/src/components/post-footer";
+import type { HeadFC, PageProps } from 'gatsby'
+import * as React from 'react'
+import { jsx, Heading } from 'theme-ui'
+import Layout from '@lekoarts/gatsby-theme-minimal-blog/src/components/layout'
+import ItemTags from './item-tags'
+import Seo from '@lekoarts/gatsby-theme-minimal-blog/src/components/seo'
+import PostFooter from '@lekoarts/gatsby-theme-minimal-blog/src/components/post-footer'
 
 /**
  * Shadowed component with the following tweaks:
@@ -38,12 +38,22 @@ export type MBPostProps = {
 const px = [`16px`, `8px`, `4px`]
 const shadow = px.map((v) => `rgba(0, 0, 0, 0.1) 0px ${v} ${v} 0px`)
 
-const Post: React.FC<React.PropsWithChildren<PageProps<MBPostProps>>> = ({ data: { post }, children }) => (
+const Post: React.FC<React.PropsWithChildren<PageProps<MBPostProps>>> = ({
+  data: { post },
+  children,
+}) => (
   <Layout>
     <Heading as="h1" variant="styles.h1">
       {post.title}
     </Heading>
-    <p sx={{ color: `secondary`, mt: 3, a: { color: `secondary` }, fontSize: [1, 1, 2] }}>
+    <p
+      sx={{
+        color: `secondary`,
+        mt: 3,
+        a: { color: `secondary` },
+        fontSize: [1, 1, 2],
+      }}
+    >
       <time>{post.date}</time>
       {post.tags && (
         <React.Fragment>
@@ -55,11 +65,11 @@ const Post: React.FC<React.PropsWithChildren<PageProps<MBPostProps>>> = ({ data:
     <section
       sx={{
         my: 5,
-        ".gatsby-resp-image-wrapper": {
+        '.gatsby-resp-image-wrapper': {
           my: [4, 4, 5],
           borderRadius: `4px`,
           boxShadow: shadow.join(`, `),
-          ".gatsby-resp-image-image": {
+          '.gatsby-resp-image-image': {
             borderRadius: `4px`,
           },
         },

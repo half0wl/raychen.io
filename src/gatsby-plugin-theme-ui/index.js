@@ -1,6 +1,9 @@
-import { merge } from "theme-ui"
-import tailwind from "@theme-ui/preset-tailwind"
-import { lightThemeVars, darkThemeVars } from "@lekoarts/gatsby-theme-minimal-blog/src/utils/prism-themes"
+import { merge } from 'theme-ui'
+import tailwind from '@theme-ui/preset-tailwind'
+import {
+  lightThemeVars,
+  darkThemeVars,
+} from '@lekoarts/gatsby-theme-minimal-blog/src/utils/prism-themes'
 
 const theme = merge(tailwind, {
   config: {
@@ -34,7 +37,7 @@ const theme = merge(tailwind, {
   highlights: {
     orange: {
       color: tailwind.colors.orange[4],
-    }
+    },
   },
   fonts: {
     body: `-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`,
@@ -54,8 +57,8 @@ const theme = merge(tailwind, {
       fontSize: [1, 1, 2],
       letterSpacing: `-0.003em`,
       lineHeight: `body`,
-      "--baseline-multiplier": 0.179,
-      "--x-height-multiplier": 0.35,
+      '--baseline-multiplier': 0.179,
+      '--x-height-multiplier': 0.35,
       wordBreak: `break-word`,
     },
     ul: {
@@ -63,8 +66,8 @@ const theme = merge(tailwind, {
         fontSize: [1, 1, 2],
         letterSpacing: `-0.003em`,
         lineHeight: `body`,
-        "--baseline-multiplier": 0.179,
-        "--x-height-multiplier": 0.35,
+        '--baseline-multiplier': 0.179,
+        '--x-height-multiplier': 0.35,
       },
     },
     ol: {
@@ -72,8 +75,8 @@ const theme = merge(tailwind, {
         fontSize: [1, 1, 2],
         letterSpacing: `-0.003em`,
         lineHeight: `body`,
-        "--baseline-multiplier": 0.179,
-        "--x-height-multiplier": 0.35,
+        '--baseline-multiplier': 0.179,
+        '--x-height-multiplier': 0.35,
       },
     },
     h1: {
@@ -181,10 +184,10 @@ const theme = merge(tailwind, {
     fontFamily: `body`,
     letterSpacing: `0.025rem`,
     transition: `all 0.3s ease-in-out`,
-    "&[disabled]": {
+    '&[disabled]': {
       cursor: `not-allowed`,
     },
-    ":not([disabled]):hover": {
+    ':not([disabled]):hover': {
       bg: `primary`,
       color: `white`,
     },
@@ -212,11 +215,11 @@ const theme = merge(tailwind, {
     secondary: {
       color: `secondary`,
       textDecoration: `none`,
-      ":hover": {
+      ':hover': {
         color: `heading`,
         textDecoration: `underline`,
       },
-      ":focus": {
+      ':focus': {
         color: `heading`,
       },
     },

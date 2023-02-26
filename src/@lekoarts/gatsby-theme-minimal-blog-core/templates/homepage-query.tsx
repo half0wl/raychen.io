@@ -1,5 +1,7 @@
-import { graphql } from "gatsby"
-import HomepageComponent, { Head } from "@lekoarts/gatsby-theme-minimal-blog-core/src/components/homepage"
+import { graphql } from 'gatsby'
+import HomepageComponent, {
+  Head,
+} from '@lekoarts/gatsby-theme-minimal-blog-core/src/components/homepage'
 
 /**
  * Shadowed component with the following tweaks:

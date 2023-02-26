@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { Link } from "gatsby";
-import { jsx } from "theme-ui";
-import replaceSlashes from "@lekoarts/gatsby-theme-minimal-blog/src/utils/replaceSlashes";
-import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata";
-import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config";
+import { Link } from 'gatsby'
+import { jsx } from 'theme-ui'
+import replaceSlashes from '@lekoarts/gatsby-theme-minimal-blog/src/utils/replaceSlashes'
+import useSiteMetadata from '@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata'
+import useMinimalBlogConfig from '@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config'
 
 /**
  * Shadowed component with the following tweaks:
@@ -11,8 +11,8 @@ import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/
  */
 
 const HeaderTitle = () => {
-  const { siteTitle } = useSiteMetadata();
-  const { basePath } = useMinimalBlogConfig();
+  const { siteTitle } = useSiteMetadata()
+  const { basePath } = useMinimalBlogConfig()
 
   return (
     <Link
@@ -20,11 +20,9 @@ const HeaderTitle = () => {
       aria-label={`${siteTitle} - Back to home`}
       sx={{ color: `heading`, textDecoration: `none` }}
     >
-      <div sx={{ my: 0, fontWeight: `semibold`, fontSize: [3, 4] }}>
-        🦉 ~rc
-      </div>
+      <div sx={{ my: 0, fontWeight: `semibold`, fontSize: [3, 4] }}>🦉 ~rc</div>
     </Link>
-  );
-};
+  )
+}
 
-export default HeaderTitle;
+export default HeaderTitle

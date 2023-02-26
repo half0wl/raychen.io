@@ -1,10 +1,17 @@
-import * as React from "react"
-import { useColorMode } from "theme-ui"
-import Highlight, { Prism, defaultProps } from "prism-react-renderer"
-import { calculateLinesToHighlight, getLanguage, GetLanguageInput } from "@lekoarts/themes-utils"
-import Copy from "@lekoarts/gatsby-theme-minimal-blog/src/components/copy"
-import useMinimalBlogConfig from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config"
-import { lightTheme, darkTheme } from "@lekoarts/gatsby-theme-minimal-blog/src/utils/prism-themes"
+import * as React from 'react'
+import { useColorMode } from 'theme-ui'
+import Highlight, { Prism, defaultProps } from 'prism-react-renderer'
+import {
+  calculateLinesToHighlight,
+  getLanguage,
+  GetLanguageInput,
+} from '@lekoarts/themes-utils'
+import Copy from '@lekoarts/gatsby-theme-minimal-blog/src/components/copy'
+import useMinimalBlogConfig from '@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-minimal-blog-config'
+import {
+  lightTheme,
+  darkTheme,
+} from '@lekoarts/gatsby-theme-minimal-blog/src/utils/prism-themes'
 
 /**
  * Shadowed component with the following tweaks:
@@ -12,10 +19,10 @@ import { lightTheme, darkTheme } from "@lekoarts/gatsby-theme-minimal-blog/src/u
  */
 
 // @ts-ignore
-(typeof global !== "undefined" ? global : window).Prism = Prism;
+;(typeof global !== 'undefined' ? global : window).Prism = Prism
 // Add new languages by `require()`-ing it.
 // See https://github.com/PrismJS/prism/tree/master/components for a full list.
-require("prismjs/components/prism-php");
+require('prismjs/components/prism-php')
 
 type CodeProps = {
   codeString: string
@@ -33,7 +40,7 @@ const Code = ({
   highlight = ``,
 }: CodeProps) => {
   const { showLineNumbers, showCopyButton } = useMinimalBlogConfig()
-  const [colorMode] = useColorMode<"light" | "dark">()
+  const [colorMode] = useColorMode<'light' | 'dark'>()
   const isDark = colorMode === `dark`
 
   const language = getLanguage(blockClassName)
@@ -72,7 +79,9 @@ const Code = ({
 
                   return (
                     <div {...lineProps}>
-                      {shouldShowLineNumbers && <span className="line-number-style">{i + 1}</span>}
+                      {shouldShowLineNumbers && (
+                        <span className="line-number-style">{i + 1}</span>
+                      )}
                       {line.map((token, key) => (
                         <span {...getTokenProps({ token, key })} />
                       ))}

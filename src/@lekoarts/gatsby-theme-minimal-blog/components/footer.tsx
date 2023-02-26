@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Link } from "theme-ui"
-import useSiteMetadata from "../hooks/use-site-metadata"
+import { jsx, Link } from 'theme-ui'
+import useSiteMetadata from '../hooks/use-site-metadata'
 
 /**
  * Shadowed component with the following tweaks:
@@ -28,11 +28,22 @@ const Footer = () => {
       }}
     >
       <div>
-        &copy; {new Date().getFullYear()} by {siteTitle}. All rights reserved. Version <Link aria-label="Link to source code of the current version on GitHub" href={`https://github.com/half0wl/raychen.io/commit/${version}`}>{ version }</Link>.
+        &copy; {new Date().getFullYear()} by {siteTitle}. All rights reserved.
+        Version{' '}
+        <Link
+          aria-label="Link to source code of the current version on GitHub"
+          href={`https://github.com/half0wl/raychen.io/commit/${version}`}
+        >
+          {version}
+        </Link>
+        .
       </div>
       <div>
         Built with{' '}
-        <Link aria-label="Link to Gatsby JS" href="https://www.gatsbyjs.com/">GatsbyJS</Link>.{' '}
+        <Link aria-label="Link to Gatsby JS" href="https://www.gatsbyjs.com/">
+          GatsbyJS
+        </Link>
+        .{' '}
         <Link
           aria-label="Link to the theme's GitHub repository"
           href="https://github.com/LekoArts/gatsby-themes/tree/main/themes/gatsby-theme-minimal-blog"
@@ -48,7 +59,14 @@ const Footer = () => {
         >
           LekoArts
         </Link>
-        , <Link aria-label="Link to the GitHub repository with modified theme" href="https://github.com/half0wl/raychen.io">modified by me</Link>.
+        ,{' '}
+        <Link
+          aria-label="Link to the GitHub repository with modified theme"
+          href="https://github.com/half0wl/raychen.io"
+        >
+          modified by me
+        </Link>
+        .
       </div>
     </footer>
   )
