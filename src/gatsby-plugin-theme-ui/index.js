@@ -68,6 +68,10 @@ const theme = merge(tailwind, {
         '--x-height-multiplier': 0.35,
       },
     },
+    /**
+     * @SEE components/layout.tsx
+     * I'm not sure how to retain this when overriding MDX components, hmm..
+
     h1: {
       variant: `text.heading`,
       fontSize: [3, 4, 4, 5],
@@ -75,12 +79,12 @@ const theme = merge(tailwind, {
     },
     h2: {
       variant: `text.heading`,
-      fontSize: [3, 4, 4, 5],
+      fontSize: [2, 3, 3, 4],
       mt: 4,
     },
     h3: {
       variant: `text.heading`,
-      fontSize: [2, 3, 3, 4],
+      fontSize: [1, 2, 2, 3],
       mt: 4,
     },
     h4: {
@@ -98,6 +102,7 @@ const theme = merge(tailwind, {
       fontSize: 1,
       mb: 2,
     },
+    */
     blockquote: {
       borderLeftColor: `primary`,
       borderLeftStyle: `solid`,
