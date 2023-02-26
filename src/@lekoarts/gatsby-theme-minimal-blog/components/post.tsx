@@ -66,12 +66,15 @@ const Post: React.FC<React.PropsWithChildren<PageProps<MBPostProps>>> = ({
       sx={{
         my: 5,
         '.gatsby-resp-image-wrapper': {
-          my: [4, 4, 5],
+          my: [2, 2, 3],
           borderRadius: `4px`,
           boxShadow: shadow.join(`, `),
           '.gatsby-resp-image-image': {
             borderRadius: `4px`,
           },
+        },
+        '.gatsby-highlight': {
+          mt: [2, 2, 4],
         },
         variant: `layout.content`,
       }}

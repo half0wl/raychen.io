@@ -1,28 +1,23 @@
 ---
 title: "PHP: A prettier way to var_dump"
-slug: /writing/php-prettier-vardump
-featured: true
+slug: "/writing/php-a-prettier-way-to-vardump"
 date: 2022-10-02
 tags:
-  - php
-  - debugging
+  - "php"
+  - "debugging"
+featured: true
 ---
 
-Dumping information about an object is crucial in development and debugging
-workflows. PHP has a few options for doing so:
-[`var_dump`](https://www.php.net/manual/en/function.var-dump.php),
-[`var_export`](https://www.php.net/manual/en/function.var-export.php), and
-[`print_r`](https://www.php.net/manual/en/function.print-r.php).
-All of them does not format the output for HTML rendering, which can make it
-difficult to work with given a convoluted object to dump, especially if you're
-triggering the dump code by hitting a route (via browser or a HTTP API client
-such as Postman, Insomnia, etc.)
+### [`var_dump`](https://www.php.net/manual/en/function.var-dump.php) is ugly:
+![var_dump output](./vardump.png)
 
-Inspired by [this answer on StackOverflow](https://stackoverflow.com/a/19816742),
-I wrote a function to solve that by embedding the
-[`print_r`](https://www.php.net/manual/en/function.print-r.php)’d object inside
-the [`highlight_string`](https://www.php.net/manual/en/function.highlight-string.php)
-function:
+### Here's how you can make it pretty:
+
+
+Use [`print_r`](https://www.php.net/manual/en/function.print-r.php), and embed
+the output inside
+[`highlight_string`](https://www.php.net/manual/en/function.highlight-string.php).
+
 
 ```php
 <?php
@@ -31,75 +26,34 @@ function d($obj): string {
     return highlight_string("<?php\n" . print_r($obj, true) . "\n", true);
 }
 echo(d($dogsBySize));
+```
 
-// To skip having to `echo()` it, make the function dump the output directly
-// instead of returning it:
+![pretty dump output](./prettydump.png)
+
+It's a tremendous improvement in readability! If you want to skip having to
+`echo()` the output, make the function dump it directly instead of returning it:
+```php
+<?php
+
 function d($obj) {
     highlight_string("<?php\n" . print_r($obj, true) . "\n", false);
 }
 d($dogsBySize);
 ```
 
-This is the output (via [Insomnia](https://insomnia.rest/)):
+# Alternatives
 
-![pretty dump output](./prettydump.png)
+If you use `var_dump` a lot, check out [Xdebug](https://xdebug.org/)'s
+improved [`var_dump`](https://xdebug.org/docs/develop#improved_var_dump) feature.
+None of the native dump functions format the output for HTML rendering (as it
+shouldn't!), which makes it difficult to read when you have a large/convoluted
+object. For comparison:
 
-With this mock object:
-
-```php
-<?php
-
-declare(strict_types=1);
-
-
-class Dog
-{
-    public function __construct(
-        private string $breed,
-    ) {
-    }
-}
-
-$smallDogs = [
-    new Dog("Chihuahua"),
-    new Dog("Pug"),
-];
-
-$mediumDogs = [
-    new Dog("Miniature Schnauzer"),
-    new Dog("Poodle"),
-];
-
-$largeDogs = [
-    new Dog("Golden Retriever"),
-    new Dog("Labrador"),
-    new Dog("Standard Schnauzer"),
-];
-
-$dogsBySize = [
-    'small' => $smallDogs,
-    'medium' => $mediumDogs,
-    'large' => $largeDogs,
-];
-```
-
-If you’ve used any of the dump functions, you’ll immediately see that it's a
-big improvement in terms of readability :-)
-
-# Comparison
-
-### [`var_dump`](https://www.php.net/manual/en/function.var-dump.php)
-
-![var_dump output](./vardump.png)
-
-### [`var_export`](https://www.php.net/manual/en/function.var-export.php)
+#### [`var_export`](https://www.php.net/manual/en/function.var-export.php)
 
 ![var_export output](./varexport.png)
 
-### [`print_r`](https://www.php.net/manual/en/function.print-r.php)
+#### [`print_r`](https://www.php.net/manual/en/function.print-r.php)
 
 ![print_r output](./printr.png)
 
-# Alternative(s)
-
-I recommend checking out [Xdebug](https://xdebug.org/) for its improved [`var_dump`](https://xdebug.org/docs/develop#improved_var_dump) feature.

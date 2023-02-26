@@ -1,17 +1,22 @@
 ---
-title: Kubernetes context in shell
+title: "How to: Display current Kubernetes cluster in shell prompt"
+slug: "/writing/how-to-display-current-kubernetes-cluster-in-shell-prompt"
 date: 2022-11-14
-slug: /writing/kubernetes-context-in-shell
 tags:
-  - kubernetes
-  - shell
+  - "how-to"
+  - "kubernetes"
 ---
 
-It's handy to know which Kubernetes cluster you're operating on when working with multiple clusters (ergo different `kubectl` contexts).
+When working with multiple Kubernetes clusters, you need to know which cluster
+you're operating on. Accidentally issuing a command to the wrong cluster can
+be disastrous!
 
-I use this function in my `~/.zshrc`:
+Instead of remembering what's currently set in `KUBECTL_CONTEXT`, I inject it
+into my shell's prompt using this function:
 
-```sh
+
+```bash
+# ~/.zshrc
 __kube_ps1()
 {
     KUBECTL_CONTEXT=$(kubectl config current-context)
@@ -22,7 +27,8 @@ __kube_ps1()
 alias kubectx=__kube_ps1
 ```
 
-and invoke it manually with `kubectx`. It changes my shell's `PS1` to the current context:
+I can then invoke that function to change my session's PS1 to the current
+context set in `KUBECTL_CONTEXT`:
 
 ```sh
 $ kubectx
@@ -30,5 +36,3 @@ $ kubectx
 NAME                   STATUS   ROLES    AGE   VERSION
 pool-j0w2l5hgr-mcggw   Ready    <none>   8m    v1.24.4
 ```
-
-which tells me which cluster I'm operating on.
