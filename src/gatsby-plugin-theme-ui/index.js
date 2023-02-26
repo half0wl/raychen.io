@@ -44,6 +44,7 @@ const theme = merge(tailwind, {
   },
   styles: {
     root: {
+      overflowY: `scroll`,
       color: `text`,
       backgroundColor: `background`,
       margin: 0,
