@@ -11,10 +11,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Build
-        uses: jzweifel/gatsby-cli-github-action@master
+      - name: Setup Node 18
+        uses: actions/setup-node@v3
         with:
-          gatsby-arg: build
+          node-version: 18
+
+      - name: Install dependencies
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+
+      - name: Build
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
 
       - name: Publish
         uses: cloudflare/pages-action@v1
