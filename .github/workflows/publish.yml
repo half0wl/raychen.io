@@ -16,8 +16,8 @@ jobs:
           echo "COMMIT_SHA=$(git rev-parse --short ${{ github.sha }})" >> $GITHUB_ENV
 
       - name: Echo COMMIT_SHA
-        run:
-          | echo $COMMIT_SHA
+        run: |
+          echo $COMMIT_SHA
 
       - name: Setup Node v18
         uses: actions/setup-node@v3
