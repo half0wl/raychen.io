@@ -3,6 +3,7 @@ title: "How to: Stop Docker from auto-restarting containers"
 slug: "/writing/how-to-stop-docker-from-auto-restarting-containers"
 date: 2022-11-14
 tags:
+  - "how-to"
   - "docker"
 ---
 
