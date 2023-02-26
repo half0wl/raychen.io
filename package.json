@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "name": "raychen.io",
+  "version": "1.0.0",
+  "author": "Ray Chen <ray@raychen.io>",
+  "license": "MIT",
+  "scripts": {
+    "start": "gatsby clean && gatsby develop --port 4000",
+    "build": "gatsby build"
+  },
+  "dependencies": {
+    "@lekoarts/gatsby-theme-minimal-blog": "^6.0.5",
+    "gatsby": "^5.5.0",
+    "gatsby-plugin-feed": "^5.5.0",
+    "gatsby-plugin-manifest": "^5.5.0",
+    "gatsby-plugin-sitemap": "^6.5.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
+    "prismjs": "^1.29.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "cross-env": "^7.0.3",
+    "typescript": "^4.9.4"
+  }
+}
