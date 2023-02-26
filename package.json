@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0"
   },
   "overrides": {
-    "@lekoarts/gatsby-theme-minimal-blog": {
+    "gatsby-theme-minimal-blog": {
       "engines": {
         "node": ">=17.0.0"
       }
