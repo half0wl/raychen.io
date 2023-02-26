@@ -20,8 +20,8 @@ type ListingProps = {
       name: string
       slug: string
     }[]
-    parent: {
-      frontmatter: {
+    parent?: {
+      frontmatter?: {
         [key: string]: any
       }
     }
@@ -35,7 +35,7 @@ const Listing = ({ posts, className = ``, showTags = true }: ListingProps) => (
     {posts.map((post) => (
       <BlogListItem
         key={post.slug}
-        featured={post.parent.frontmatter.featured}
+        featured={post.parent?.frontmatter?.featured}
         post={post}
         showTags={showTags}
       />
