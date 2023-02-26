@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import * as React from "react"
-import { Text } from "theme-ui"
-import { jsx, Box } from "theme-ui"
-import { Link } from "gatsby"
-import ItemTags from "./item-tags"
-import { Highlight } from "../utils"
+import * as React from 'react'
+import { Text } from 'theme-ui'
+import { jsx, Box } from 'theme-ui'
+import { Link } from 'gatsby'
+import ItemTags from './item-tags'
+import { Highlight } from '../utils'
 
 /**
  * Shadowed component with the following tweaks:
@@ -28,12 +28,30 @@ type BlogListItemProps = {
   showTags?: boolean
 }
 
-const BlogListItem = ({ featured, post, showTags = true }: BlogListItemProps) => (
+const BlogListItem = ({
+  featured,
+  post,
+  showTags = true,
+}: BlogListItemProps) => (
   <Box mb={4}>
-    <Link to={post.slug} sx={(t) => ({ ...t.styles?.a, fontSize: [1, 2, 3], color: `text` })}>
-      { featured ? <Highlight>📌 {post.title}</Highlight> : post.title }
+    <Link
+      to={post.slug}
+      sx={(t) => ({ ...t.styles?.a, fontSize: [1, 2, 3], color: `text` })}
+    >
+      {featured ? (
+        <Highlight>📌 {post.title}</Highlight>
+      ) : (
+        post.title
+      )}
     </Link>
-    <p sx={{ color: `secondary`, mt: 1, a: { color: `secondary` }, fontSize: [1, 1, 2] }}>
+    <p
+      sx={{
+        color: `secondary`,
+        mt: 1,
+        a: { color: `secondary` },
+        fontSize: [1, 1, 2],
+      }}
+    >
       <time>{post.date}</time>
       {post.tags && showTags && (
         <React.Fragment>

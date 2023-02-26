@@ -52,15 +52,14 @@ const Homepage = ({ posts }: MBHomepageProps) => {
       <h1 sx={visuallyHidden}>{siteTitle}</h1>
       <section sx={{ mb: [4, 5, 5], p: { fontSize: [1, 2, 3], mt: 2 }, variant: `section_hero` }}>
         <Text sx={{ fontWeight: 600, fontSize: [4, 5, 5], color: `heading` }}>
-          Hi. I'm <Highlight>Ray</Highlight>.
+          Hi! I'm <Highlight>Ray</Highlight>.
         </Text>
         <br/>
         <br/>
         <Text sx={{ fontSize: [3, 3, 3], color: `heading` }}>
           I'm passionate about <Highlight>software and technology</Highlight>
-          ; I love <Highlight>building stuff</Highlight> and <Highlight>writing</Highlight>.
-          <br/>
-          This is my <Highlight>personal scratchpad</Highlight> filled with
+          ; I love building stuff and writing.
+          This is my personal scratchpad filled with
           <Highlight> ideas</Highlight>, <Highlight>notes</Highlight>,
           and <Highlight>random bits of knowledge</Highlight>.
         </Text>

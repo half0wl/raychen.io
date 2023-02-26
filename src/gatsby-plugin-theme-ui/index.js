@@ -21,14 +21,20 @@ const theme = merge(tailwind, {
         primary: tailwind.colors.purple[4],
         secondary: `#8a9ab0`,
         toggleIcon: tailwind.colors.gray[4],
-        background: `#1A2434`,
+        background: `#262d3d`,
         heading: tailwind.colors.white,
-        divide: tailwind.colors.gray[8],
+        // divide: tailwind.colors.gray[8],
+        divide: `#52627d`,
         muted: tailwind.colors.gray[8],
         highlightLineBg: `rgba(255, 255, 255, 0.1)`,
         ...darkThemeVars,
       },
     },
+  },
+  highlights: {
+    orange: {
+      color: tailwind.colors.orange[4],
+    }
   },
   fonts: {
     body: `-apple-system, BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`,
@@ -145,7 +151,7 @@ const theme = merge(tailwind, {
   layout: {
     container: {
       padding: [3, 4],
-      maxWidth: `1200px`,
+      maxWidth: `960px`,
     },
     content: {
       figure: {

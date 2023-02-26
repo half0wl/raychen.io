@@ -23,7 +23,7 @@ const config: GatsbyConfig = {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
       options: {
-        formatString: 'DD/MM/YYYY',
+        formatString: 'MMMM DD, YYYY',
         blogPath: '/writing',
         externalLinks: [
           {

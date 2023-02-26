@@ -2,6 +2,18 @@
 import { jsx } from 'theme-ui'
 import { ReactNode } from 'react'
 
-export const Highlight = ({ children }: { children: ReactNode }) => {
-  return <strong style={{ color: 'rgb(255, 146, 112)' }}>{children}</strong>
+const DEFAULT_VARIANT = 'highlights.orange'
+
+export const Highlight = ({
+  children,
+  variant,
+}: {
+  children: ReactNode
+  variant?: string
+}) => {
+  return (
+    <strong sx={variant ? { variant } : { variant: DEFAULT_VARIANT }}>
+      {children}
+    </strong>
+  )
 }

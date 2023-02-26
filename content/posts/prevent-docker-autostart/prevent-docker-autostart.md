@@ -1,5 +1,6 @@
 ---
 title: "Prevent Docker from auto-restarting *all* containers"
+slug: /writing/prevent-docker-from-auto-restarting-containers
 date: 2022-11-14
 tags:
   - docker
