@@ -1,7 +1,6 @@
 import { merge } from 'theme-ui'
 import tailwind from '@theme-ui/preset-tailwind'
 import {
-  lightThemeVars,
   darkThemeVars,
 } from '@lekoarts/gatsby-theme-minimal-blog/src/utils/prism-themes'
 
@@ -68,10 +67,6 @@ const theme = merge(tailwind, {
         '--x-height-multiplier': 0.35,
       },
     },
-    /**
-     * @SEE components/layout.tsx
-     * I'm not sure how to retain this when overriding MDX components, hmm..
-
     h1: {
       variant: `text.heading`,
       fontSize: [3, 4, 4, 5],
@@ -102,7 +97,6 @@ const theme = merge(tailwind, {
       fontSize: 1,
       mb: 2,
     },
-    */
     blockquote: {
       borderLeftColor: `primary`,
       borderLeftStyle: `solid`,

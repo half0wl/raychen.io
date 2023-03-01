@@ -69,16 +69,6 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           marginTop: `2rem`,
           marginBottom: 0,
         },
-        '.anchor-link': {
-          color: `#fff`,
-          opacity: `0.2`,
-          position: `absolute`,
-          transform: `translate(-1em, -2px)`,
-          width: `1em`,
-        },
-        '.anchor-link:hover': {
-          opacity: 1,
-        }
       })}
     />
     <SkipNavLink>Skip to content</SkipNavLink>
