@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Heading } from 'theme-ui'
 import * as React from 'react'
 
 /**
@@ -85,15 +85,15 @@ const injectAnchorIntoHeading = (elementName: HEADING, props: any) => {
     </React.Fragment>
   )
   switch (elementName) {
-    case 'h1':
-      return <h1 id={anchor}>{inner}</h1>
     case 'h2':
-      return <h2 id={anchor}>{inner}</h2>
+      return <Heading as="h2" variant="styles.h2">{inner}</Heading>
     case 'h3':
+      return <Heading as="h3" variant="styles.h3">{inner}</Heading>
+    case 'h1':
     case 'h4':
     case 'h5':
     case 'h6':
-      // Only support h1/h2
+      // Only support h2/h3
       return
     default:
       throw new Error(`Unknown heading: ${elementName}`)
