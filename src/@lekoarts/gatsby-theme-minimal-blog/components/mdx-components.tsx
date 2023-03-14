@@ -8,6 +8,7 @@ import withAnchorFor from './anchor-heading'
 const MdxComponents = {
   h2: (props: any) => withAnchorFor('h2', props),
   h3: (props: any) => withAnchorFor('h3', props),
+  h4: (props: any) => withAnchorFor('h4', props),
   Text: (props: any) => <Text {...props} />,
   Title: (props: any) => <Title {...props} />,
   pre: (preProps: any) => {

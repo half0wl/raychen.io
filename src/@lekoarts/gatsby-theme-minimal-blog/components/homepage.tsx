@@ -57,7 +57,7 @@ const Homepage = ({ posts }: MBHomepageProps) => {
           variant: `section_hero`,
         }}
       >
-        <Text sx={{ fontWeight: 600, fontSize: [4, 5, 5], color: `heading` }}>
+        <Text sx={{ fontWeight: 600, fontSize: [4, 4, 4], color: `heading` }}>
           Hi! I'm <Highlight>Ray</Highlight>.
         </Text>
         <br />

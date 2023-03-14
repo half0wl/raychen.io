@@ -97,8 +97,13 @@ const injectAnchorIntoHeading = (elementName: HEADING, props: any) => {
           {inner}
         </Heading>
       )
-    case 'h1':
     case 'h4':
+      return (
+        <Heading as="h4" id={anchor} variant="styles.h4">
+          {inner}
+        </Heading>
+      )
+    case 'h1':
     case 'h5':
     case 'h6':
       // Only support h2/h3
