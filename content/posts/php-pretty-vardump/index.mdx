@@ -41,7 +41,7 @@ function d($obj) {
 d($dogsBySize);
 ```
 
-# Alternatives
+## Alternatives
 
 If you use `var_dump` a lot, check out [Xdebug](https://xdebug.org/)'s
 improved [`var_dump`](https://xdebug.org/docs/develop#improved_var_dump) feature.
@@ -49,11 +49,11 @@ None of the native dump functions format the output for HTML rendering (as it
 shouldn't!), which makes it difficult to read when you have a large/convoluted
 object. For comparison:
 
-#### [`var_export`](https://www.php.net/manual/en/function.var-export.php)
+### var_export
 
 ![var_export output](./varexport.png)
 
-#### [`print_r`](https://www.php.net/manual/en/function.print-r.php)
+### print_r
 
 ![print_r output](./printr.png)
 
