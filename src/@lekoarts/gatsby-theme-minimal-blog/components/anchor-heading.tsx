@@ -86,9 +86,17 @@ const injectAnchorIntoHeading = (elementName: HEADING, props: any) => {
   )
   switch (elementName) {
     case 'h2':
-      return <Heading as="h2" variant="styles.h2">{inner}</Heading>
+      return (
+        <Heading as="h2" id={anchor} variant="styles.h2">
+          {inner}
+        </Heading>
+      )
     case 'h3':
-      return <Heading as="h3" variant="styles.h3">{inner}</Heading>
+      return (
+        <Heading as="h3" id={anchor} variant="styles.h3">
+          {inner}
+        </Heading>
+      )
     case 'h1':
     case 'h4':
     case 'h5':
