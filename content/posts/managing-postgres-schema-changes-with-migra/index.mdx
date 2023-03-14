@@ -150,11 +150,11 @@ $ migra --unsafe \
 
 (See [Appendix: Demostration set-up](#appendix-demostration-set-up) for the demo set-up.)
 
-### Why `--unsafe` flag?
+## Why `--unsafe` flag?
 
 Without `--unsafe`, `migra` will not generate destructive statements. We want them because dropping columns/indexes/etc. is a valid schema tweak, so we invoke `migra` with the `--unsafe` flag to intentionally retain destructive commands such as `DROP ...`. Check out https://databaseci.com/docs/migra/options for more information.
 
-### Usage warning: Be careful about renames!
+## Usage warning: Be careful about renames!
 
 Most rename operations are generated as “drop -> create,” meaning that it **re-creates** the object instead of renaming it in-place. If you rename a table, column, primary key, etc., it will generate a `DROP ...` statement and `CREATE ...`. Check out [migra/issues/29](https://github.com/djrobstep/migra/issues/29) & [migra/issues/213](https://github.com/djrobstep/migra/issues/213) for more information.
 
