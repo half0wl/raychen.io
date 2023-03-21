@@ -10720,6 +10720,11 @@ trough@^2.0.0:
   resolved "https://registry.yarnpkg.com/true-case-path/-/true-case-path-2.2.1.tgz#c5bf04a5bbec3fd118be4084461b3a27c4d796bf"
   integrity sha512-0z3j8R7MCjy10kc/g+qg7Ln3alJTodw9aDuVWZa3uiWqfuBMKeAeP2ocWcxoyM3D73yz3Jt/Pu4qPr4wHSdB/Q==
 
+ts-pattern@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-4.2.1.tgz#d626da4c5755d78c1ae62b8f2675c94884a31a8c"
+  integrity sha512-lXCmHZb01QOM9HdCLvisCGUH9ATdKPON9UaUvwe007gJAhuSBhRWIAIowys5QqNxEq6odWctfMIdI96vzjnOMQ==
+
 tsconfig-paths@^3.14.1:
   version "3.14.2"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.14.2.tgz#6e32f1f79412decd261f92d633a9dc1cfa99f088"
