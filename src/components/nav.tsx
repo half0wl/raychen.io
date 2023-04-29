@@ -6,7 +6,7 @@ const ExtLink = tw(Link)`text-lg`
 const Nav = () => {
   return (
     <nav className="mt-4 flex flex-col justify-between border-b-2 border-slate-400 md:mt-8 md:flex-row">
-      <Link href="/" className="text-3xl font-semibold tracking-tighter">
+      <Link href="/" className="mb-2 text-3xl font-extrabold tracking-tighter">
         Ray Chen
       </Link>
       <ul className="list-none [&>li:not(:first-child)]:ml-4 [&>li]:inline">
