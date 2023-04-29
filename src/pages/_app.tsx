@@ -8,7 +8,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   margin: 0 auto;
   padding: 1px 25px;
-  max-width: 960px;
+  max-width: 768px;
 `
 
 const Main = styled.main`

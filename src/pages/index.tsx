@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     <>
       <Head />
       <div className="mt-10 md:mt-20">
-        <section className="flex flex-col items-center gap-8 md:flex-row">
+        <section className="flex flex-col gap-8 md:flex-row md:items-center">
           <Image
             src="/owl.png"
             className="rounded-full border-8 border-slate-400 shadow-sm"
