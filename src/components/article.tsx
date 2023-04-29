@@ -43,11 +43,13 @@ const Article: React.FC<Props> = ({ articleKey, children }) => {
         <article
           className={classNames(
             'text-lg text-slate-800',
+            // ul
             '[&>ul]:list-inside [&>ul]:list-disc',
             '[&>ul]:-mt-4',
             '[&>ul]:pl-8',
             '[&>ul]:mb-4',
             '[&>ul>li]:mb-2',
+            // p
             '[&>p]:mb-8',
           )}
         >

@@ -14,6 +14,7 @@ body {
 body {
   font-family: 'Inter', sans-serif;
   overflow-wrap: break-all;
+  overflow: scroll;
   white-space: normal;
   background-color: #fff4e0;
   color: #4d4d4d;
@@ -45,6 +46,10 @@ a:hover {
   background-color: #ffe8ce;
   padding: 2px;
   font-size: 1rem;
+}
+
+:not(pre) > h2 code {
+  font-size: 1.3rem;
 }
 
 @tailwind base;
