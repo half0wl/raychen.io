@@ -47,7 +47,7 @@ const Home: React.FC = () => {
             </p>
           </article>
         </section>
-        <section className="mt-20">
+        <section className="mt-10 md:mt-20">
           <h2 className="mb-4 text-2xl font-bold">Writing</h2>
           <ul>{articleLinks}</ul>
         </section>
