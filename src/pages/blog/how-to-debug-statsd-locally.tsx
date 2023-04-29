@@ -1,16 +1,9 @@
 import Article from '@/components/article'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import Code from '@/components/code'
-import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+import CodeBlock from '@/components/code-block'
 
 const _: React.FC = () => {
   return (
-    <Article
-      title="How-to: Debug StatsD locally"
-      description="blah"
-      slug="/blog/how-to-debug-statsd-locally"
-      publishedAt={new Date(2023, 2, 20)}
-    >
+    <Article articleKey="debug-statsd-locally">
       <p>
         It's useful to know what StatsD metrics you're sending locally before it
         hits your production metrics sink. Getting a metric name, namespace, or
@@ -19,7 +12,7 @@ const _: React.FC = () => {
         test any metric-related changes locally before it hits production.
       </p>
       <p>Assuming this example that sends a few metrics every 2 seconds:</p>
-      <Code
+      <CodeBlock
         lang="python"
         code={`from time import sleep
 import statsd
@@ -35,7 +28,7 @@ while True:
         You can echo the metrics it's sending by using <code>`netcat`</code> to
         listen for the UDP packets:
       </p>
-      <Code
+      <CodeBlock
         lang="sh"
         code={`$ nc -ulv -p 8125
 Received packet from 127.0.0.1:58916 -> 127.0.0.1:8125 (local)
@@ -61,8 +54,8 @@ stats.timed:1.000000|msfoo:1|c`}
       <p>
         You can also take this a step further and bake it into your CI process.
         Run an <code>`nc`</code> listener and point your app's StatsD host/port
-        at the <code>`nc`</code>
-        process, and perform assertions against the output.
+        at the <code>`nc`</code> process, and perform assertions against the
+        output.
       </p>
     </Article>
   )

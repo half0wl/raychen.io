@@ -19,8 +19,26 @@ body {
   color: #4d4d4d;
 }
 
+main a {
+  color: #aa3d3d;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+main h1 a {
+  color: unset;
+  text-decoration: unset;
+}
+
+main a:hover {
+  color: #aa3d3d;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
 a:hover {
   color: #aa3d3d;
+  font-weight: 800;
 }
 
 :not(pre) > code {

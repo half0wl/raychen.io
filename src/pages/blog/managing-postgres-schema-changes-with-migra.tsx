@@ -1,15 +1,10 @@
 import Article from '@/components/article'
+import CodeBlock from '@/components/code-block'
 import Link from 'next/link'
-import Code from '@/components/code'
 
 const _: React.FC = () => {
   return (
-    <Article
-      title="Managing Postgres schema changes with Migra"
-      description="blah"
-      slug="/blog/managing-postgres-schema-changes-with-migra"
-      publishedAt={new Date(2023, 2, 20)}
-    >
+    <Article articleKey="postgres-migra">
       <p>
         <code>
           <Link href="https://github.com/djrobstep/migra">`migra`</Link>
@@ -22,7 +17,7 @@ const _: React.FC = () => {
         with A.
       </p>
       <p>Here's a diagram to help visualize this:</p>
-      <Code
+      <CodeBlock
         lang="text"
         code={`
 .               (current)                       (new)

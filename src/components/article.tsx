@@ -1,37 +1,25 @@
-import Link from 'next/link'
+import articles from '@/articles'
 import Head from '@/components/head'
+import { formatDate } from '@/utils'
 import classNames from 'classnames'
+import Link from 'next/link'
 
 interface Props {
+  articleKey: string
   children: React.ReactNode
-  keywords?: string[]
-  description: string
-  ogImageLink?: string
-  ogImageHeight?: string
-  ogImageWidth?: string
-  publishedAt: Date
-  slug: string
-  title: string
 }
 
-const Article: React.FC<Props> = ({
-  children,
-  keywords,
-  description,
-  ogImageLink,
-  ogImageHeight,
-  ogImageWidth,
-  publishedAt,
-  slug,
-  title,
-}) => {
-  const [fmtDay, fmtMonth, fmtYear] = [
-    publishedAt.getDay().toString().padStart(2, '0'),
-    new Intl.DateTimeFormat('us', { month: 'short' }).format(publishedAt),
-    publishedAt.getFullYear(),
-  ]
-  const fmtDate = `${fmtMonth} ${fmtDay}, ${fmtYear}`
-
+const Article: React.FC<Props> = ({ articleKey, children }) => {
+  const {
+    title,
+    slug,
+    publishedAt,
+    description,
+    keywords,
+    ogImageLink,
+    ogImageWidth,
+    ogImageHeight,
+  } = articles[articleKey]
   return (
     <>
       <Head
@@ -45,10 +33,12 @@ const Article: React.FC<Props> = ({
       />
       <section className="mt-12">
         <div className="mb-6">
-          <h1 className="mb-4 text-4xl font-extrabold">
-            <Link href={slug}>{title}</Link>
+          <h1 className="mb-4 text-4xl">
+            <Link className="font-extrabold" href={slug}>
+              {title}
+            </Link>
           </h1>
-          <span>{fmtDate}</span>
+          <span>{formatDate(publishedAt)}</span>
         </div>
         <article
           className={classNames(

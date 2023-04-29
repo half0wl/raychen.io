@@ -6,7 +6,7 @@ interface Props {
   lang: string
 }
 
-const Code: React.FC<Props> = ({ code, lang }) => {
+const CodeBlock: React.FC<Props> = ({ code, lang }) => {
   return (
     <SyntaxHighlighter
       language={lang}
@@ -20,4 +20,4 @@ const Code: React.FC<Props> = ({ code, lang }) => {
   )
 }
 
-export default Code
+export default CodeBlock

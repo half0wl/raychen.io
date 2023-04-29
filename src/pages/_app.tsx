@@ -1,8 +1,8 @@
+import Footer from '@/components/footer'
+import Nav from '@/components/nav'
+import StyledComponentsRegistry from '@/lib/styled-components-registry'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import Nav from '@/components/nav'
-import Footer from '@/components/footer'
-import StyledComponentsRegistry from '@/lib/styled-components-registry'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -19,11 +19,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <StyledComponentsRegistry>
       <Container>
+        <Nav />
         <Main>
-          <Nav />
           <Component {...pageProps} />
-          <Footer />
         </Main>
+        <Footer />
       </Container>
     </StyledComponentsRegistry>
   )
