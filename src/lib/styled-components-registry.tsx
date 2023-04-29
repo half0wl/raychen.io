@@ -15,8 +15,7 @@ export default function StyledComponentsRegistry({
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
-    // https://github.com/vercel/next.js/issues/44117
-    // @ts-expect-error
+    // @ts-expect-error https://github.com/vercel/next.js/issues/44117
     styledComponentsStyleSheet.instance.clearTag();
     return <>{styles}</>;
   });

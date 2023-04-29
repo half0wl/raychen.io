@@ -6,6 +6,9 @@ module.exports = {
       parser: '@typescript-eslint/parser',
     },
   ],
+  rules: {
+    'react/no-unescaped-entities': 'off',
+  },
   extends: [
     'next/core-web-vitals',
     'eslint:recommended',
