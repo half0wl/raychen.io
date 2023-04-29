@@ -17,6 +17,7 @@ const articles: Record<string, Article> = {
 locally before it hits your production metrics sink. Getting a metric name,
 namespace, or data type incorrect in production is annoying ...`,
     slug: '/blog/how-to-debug-statsd-locally',
+    ogImageLink: 'https://og.railway.app/api/image?layoutName=simple&text=How-to%3A+Debug+StatsD+locally&left=%23c79a4e&right=%23FB8D83',
   },
   'postgres-migra': {
     title: 'Managing Postgres schema changes with Migra',
