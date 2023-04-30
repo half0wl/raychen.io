@@ -16,14 +16,17 @@ const ArticleLink: React.FC<Props> = ({
 }) => {
   if (inExternalSite) {
     return (
-      <span className="mb-6 flex flex-col">
-        <Link className="text-xl" href={inExternalSite.articleLink}>
-          ⧉{' '}{title}
-        </Link>
+      <span className="mb-6 flex flex-col w-100">
+        <span>
+          ⧉{' '}
+          <Link className="text-xl" href={inExternalSite.articleLink}>
+            {title}
+          </Link>
+        </span>
         <span className="text-slate-500">
           on {publishedAt} in{' '}
           <Link
-            className="font-normal text-pink-400"
+            className="font-normal text-pink-500"
             href={inExternalSite.siteLink}
           >
             {inExternalSite.name}
