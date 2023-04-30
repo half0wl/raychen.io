@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 interface Props {
   description?: string
-  keywords?: string[]
+  keywords?: string
   ogImageLink?: string
   ogImageHeight?: string
   ogImageWidth?: string
@@ -39,7 +39,7 @@ const EnrichedHead: React.FC<Props> = ({
           property="og:description"
           content={description ?? 'Random bits of knowledge.'}
         />
-        <meta name="keywords" content={keywords ? keywords.join(', ') : ''} />
+        {keywords && <meta name="keywords" content={keywords} />}
         {process.env.NODE_ENV === 'production' && (
           <meta
             property="og:url"

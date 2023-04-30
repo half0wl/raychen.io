@@ -44,11 +44,15 @@ a:hover {
 
 :not(pre) > code {
   background-color: #ffe8ce;
-  padding: 2px;
+  padding: 6px;
   font-size: 1rem;
 }
 
 :not(pre) > h2 code {
+  font-size: 1.6rem;
+}
+
+:not(pre) > h3 code {
   font-size: 1.3rem;
 }
 

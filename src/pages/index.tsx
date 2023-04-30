@@ -1,22 +1,18 @@
-import articles from '@/articles'
 import ArticleLink from '@/components/article-link'
 import Head from '@/components/head'
+import { compileAllMdx } from '@/lib/build'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Home: React.FC = () => {
-  const articleLinks = Object.entries(articles).map(([key, article]) => {
-    return (
-      <li key={key}>
-        <ArticleLink
-          title={article.title}
-          publishedAt={article.publishedAt}
-          slug={article.slug}
-        />
-      </li>
-    )
-  })
+interface ComponentProps {
+  articles: { title: string; slug: string; publishedAt: string }[]
+}
 
+interface StaticPropsOut {
+  props: { [key in keyof ComponentProps]: ComponentProps[key] }
+}
+
+const Home: React.FC<ComponentProps> = ({ articles }) => {
   return (
     <>
       <Head />
@@ -49,11 +45,27 @@ const Home: React.FC = () => {
         </section>
         <section className="mt-10 md:mt-20">
           <h2 className="mb-4 text-2xl font-semibold">Writing</h2>
-          <ul>{articleLinks}</ul>
+          <ul>
+            {articles.map((a) => (
+              <li key={a.slug}>
+                <ArticleLink {...a} />
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
     </>
   )
 }
+
+export const getStaticProps = async (): Promise<StaticPropsOut> => ({
+  props: {
+    articles: (await compileAllMdx()).map((c) => ({
+      title: c.frontmatter.title,
+      slug: `/blog/${c.frontmatter.slug}`,
+      publishedAt: c.frontmatter.publishedAt,
+    })),
+  },
+})
 
 export default Home
