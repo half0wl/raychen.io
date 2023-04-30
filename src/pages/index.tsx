@@ -51,6 +51,13 @@ const Home: React.FC<ComponentProps> = ({ articles }) => {
                 <ArticleLink {...a} />
               </li>
             ))}
+            <li>
+              <ArticleLink
+                title="Blah"
+                publishedAt='01 January, 2023'
+                inExternalSite={{ articleLink: '', siteLink: '', name: 'blah' }}
+              />
+            </li>
           </ul>
         </section>
       </div>

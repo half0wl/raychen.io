@@ -69,6 +69,22 @@ const components = {
       <code className={className}>{children}</code>
     )
   },
+  Video: (props: any) => {
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        controls
+        style={{
+          width: '100%',
+          marginTop: '1em',
+        }}
+      >
+        <source type="video/mp4" src={`${props.link}#t=${props.startAt}`} />
+      </video>
+    )
+  },
 }
 
 export default components
