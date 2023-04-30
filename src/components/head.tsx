@@ -53,6 +53,11 @@ const EnrichedHead: React.FC<Props> = ({
         {ogImageWidth && (
           <meta property="og:image:width" content={ogImageWidth} />
         )}
+        <script
+          async
+          src="https://y.raychen.io/script.js"
+          data-website-id="c6fed040-5906-4116-a3ad-fa5516e6b28b"
+        ></script>
       </Head>
     </>
   )
