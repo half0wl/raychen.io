@@ -11,9 +11,6 @@ const Nav = () => {
       </Link>
       <ul className="list-none [&>li:not(:first-child)]:ml-4 [&>li]:inline">
         <li>
-          <ExtLink href="/work">Work</ExtLink>
-        </li>
-        <li>
           <ExtLink href="https://github.com/half0wl">GitHub</ExtLink>
         </li>
         <li>
