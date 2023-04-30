@@ -1,7 +1,7 @@
 ---
 title: "Building effective remote work environments"
 slug: "building-effective-remote-work-environments"
-publishedAt: "01 Jan, 2023"
+publishedAt: "2023-01-1"
 keywords:
   - "remote-work"
 featured: true

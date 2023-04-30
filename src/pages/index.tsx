@@ -1,5 +1,6 @@
 import ArticleLink from '@/components/article-link'
 import Head from '@/components/head'
+import { formatDate } from '@/utils'
 import { compileAllMdx } from '@/lib/build'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -54,7 +55,7 @@ const Home: React.FC<ComponentProps> = ({ articles }) => {
             <li>
               <ArticleLink
                 title="Blah"
-                publishedAt='01 January, 2023'
+                publishedAt="01 January, 2023"
                 inExternalSite={{ articleLink: '', siteLink: '', name: 'blah' }}
               />
             </li>
@@ -70,7 +71,7 @@ export const getStaticProps = async (): Promise<StaticPropsOut> => ({
     articles: (await compileAllMdx()).map((c) => ({
       title: c.frontmatter.title,
       slug: `/blog/${c.frontmatter.slug}`,
-      publishedAt: c.frontmatter.publishedAt,
+      publishedAt: formatDate(new Date(c.frontmatter.publishedAt)),
     })),
   },
 })
