@@ -1,0 +1,61 @@
+html,
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-wrap: break-all;
+  overflow: scroll;
+  white-space: normal;
+  background-color: #fff4e0;
+  color: #4d4d4d;
+}
+
+main a {
+  color: #aa3d3d;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+main h1 a {
+  color: unset;
+  text-decoration: unset;
+}
+
+main a:hover {
+  color: #aa3d3d;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #aa3d3d;
+  font-weight: 800;
+}
+
+:not(pre) > code {
+  background-color: #ffe8ce;
+  padding: 6px;
+  font-size: 1rem;
+}
+
+:not(pre) > h2 code {
+  font-size: 1.6rem;
+}
+
+:not(pre) > h3 code {
+  font-size: 1.3rem;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

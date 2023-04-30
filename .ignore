@@ -1,2 +1,4 @@
 !.github
 .git
+.next
+node_modules
