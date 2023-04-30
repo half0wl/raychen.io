@@ -1,10 +1,8 @@
 ---
 title: "How-to: Drain Gearman work queue"
 slug: "how-to-drain-gearman-work-queue"
-publishedAt: "2023-01-01"
-keywords:
-  - "how-to"
-  - "gearman"
+publishedAt: "2022-11-14"
+keywords: "how to, reset, drain, gearman, queue"
 ---
 
 You can drain a [Gearman](http://gearman.org/) work queue by dumping its jobs

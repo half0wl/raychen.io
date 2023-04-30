@@ -1,7 +1,7 @@
 import Head from '@/components/head'
 import mdxComponents from '@/components/mdx'
 import { compileAllMdx, Mdx } from '@/lib/build'
-import { formatDate } from '@/utils'
+import dayjs from 'dayjs'
 import { MDXRemote } from 'next-mdx-remote'
 import Link from 'next/link'
 
@@ -34,8 +34,8 @@ export const getStaticProps = async ({
   if (!ours) {
     throw new Error(`file not found for slug: ${params.slug}`)
   }
-  ours.frontmatter.publishedAt = formatDate(
-    new Date(ours.frontmatter.publishedAt),
+  ours.frontmatter.publishedAt = dayjs(ours.frontmatter.publishedAt).format(
+    'DD MMMM YYYY',
   )
   return { props: { compiled: ours } }
 }

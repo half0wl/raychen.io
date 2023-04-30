@@ -1,11 +1,8 @@
 ---
-title: "How to: Debug StatsD locally"
+title: "How-to: Debug StatsD locally"
 slug: "how-to-debug-statsd-locally"
 publishedAt: "2023-03-22"
-keywords:
-  - "statsd"
-  - "local"
-  - "debug"
+keywords: "how to, statsd, debug, local"
 ---
 
 It's useful to know what StatsD metrics you're sending locally before it

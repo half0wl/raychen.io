@@ -1,10 +1,8 @@
 ---
 title: "neovim + TypeScript = ⚡️"
 slug: "neovim-typescript"
-publishedAt: "2023-01-01"
-keywords:
-  - "neovim"
-  - "typescript"
+publishedAt: "2023-03-15"
+keywords: "neovim, typescript"
 ---
 
 This is a rave about neovim.

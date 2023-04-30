@@ -1,10 +1,8 @@
 ---
-title: "How-to: Display current Kubernetes cluster in shell prompt"
-slug: "how-to-display-current-k8s-cluster-in-shell-prompt"
-publishedAt: "2023-01-01"
-keywords:
-  - "how-to"
-  - "kubernetes"
+title: "How-to: Display current Kubernetes context in shell prompt"
+slug: "how-to-display-current-k8s-context-in-shell-prompt"
+publishedAt: "2022-11-14"
+keywords: "how-to, kubernetes, context, shell"
 ---
 
 When working with multiple Kubernetes clusters, you need to know which cluster

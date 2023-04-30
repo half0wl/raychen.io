@@ -1,10 +1,8 @@
 ---
 title: "How-to: Stop Docker from auto-restarting containers"
 slug: "how-to-stop-docker-from-auto-restarting-containers"
-publishedAt: "2023-01-01"
-keywords:
-  - "how-to"
-  - "docker"
+publishedAt: "2022-11-14"
+keywords: "how to, docker, prevent, auto restart, containers"
 ---
 
 I have a bunch (...a lot) of docker containers with `restart-policy=always`.

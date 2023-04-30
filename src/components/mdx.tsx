@@ -4,6 +4,14 @@ import HWithAnchor, { H } from '@/components/h-with-anchor'
 
 const components = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  blockquote: (props: any) => (
+    <blockquote
+      {...props}
+      className="border-l-4 border-pink-700 py-0.5 pl-4 text-slate-500"
+    >
+      {props.children}
+    </blockquote>
+  ),
   H2: (props: any) => <HWithAnchor h={H.h2} {...props} />,
   H3: (props: any) => <HWithAnchor h={H.h3} {...props} />,
   p: (props: any) => (
@@ -22,7 +30,7 @@ const components = {
     </ol>
   ),
   li: (props: any) => (
-    <li {...props} className="my-4 pl-6">
+    <li {...props} className="my-4 pl-8">
       {props.children}
     </li>
   ),

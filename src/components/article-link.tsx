@@ -16,7 +16,7 @@ const ArticleLink: React.FC<Props> = ({
 }) => {
   if (inExternalSite) {
     return (
-      <span className="mb-6 flex flex-col w-100">
+      <span className="mb-6 flex flex-col">
         <span>
           ⧉{' '}
           <Link className="text-xl" href={inExternalSite.articleLink}>

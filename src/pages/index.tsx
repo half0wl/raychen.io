@@ -1,6 +1,6 @@
 import ArticleLink from '@/components/article-link'
+import dayjs from 'dayjs'
 import Head from '@/components/head'
-import { formatDate } from '@/utils'
 import { compileAllMdx } from '@/lib/build'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -54,9 +54,27 @@ const Home: React.FC<ComponentProps> = ({ articles }) => {
             ))}
             <li>
               <ArticleLink
-                title="Blah"
-                publishedAt="01 January, 2023"
-                inExternalSite={{ articleLink: '', siteLink: '', name: 'blah' }}
+                title="Remote-controlling macOS with a Python Telegram bot"
+                publishedAt="September 20, 2017"
+                inExternalSite={{
+                  articleLink:
+                    'https://chatbotslife.com/remote-controlling-macos-with-a-python-telegram-bot-d656d2e00226?utm_source=raychen.io',
+                  siteLink: 'https://chatbotslife.com/?utm_source=raychen.io',
+                  name: 'Chatbots Life',
+                }}
+              />
+            </li>
+
+            <li>
+              <ArticleLink
+                title="Server-rendered charts in Django"
+                publishedAt="September 04, 2017"
+                inExternalSite={{
+                  articleLink:
+                    'https://hackernoon.com/server-rendered-charts-in-django-2604f903389d?utm_source=raychen.io',
+                  siteLink: 'https://hackernoon.com/?utm_source=raychen.io',
+                  name: 'Hacker Noon',
+                }}
               />
             </li>
           </ul>
@@ -66,14 +84,25 @@ const Home: React.FC<ComponentProps> = ({ articles }) => {
   )
 }
 
-export const getStaticProps = async (): Promise<StaticPropsOut> => ({
-  props: {
-    articles: (await compileAllMdx()).map((c) => ({
-      title: c.frontmatter.title,
-      slug: `/blog/${c.frontmatter.slug}`,
-      publishedAt: formatDate(new Date(c.frontmatter.publishedAt)),
-    })),
-  },
-})
+export const getStaticProps = async (): Promise<StaticPropsOut> => {
+  const articles = await compileAllMdx()
+  const sortedByDescPubDate = articles.sort((a, b) => {
+    return dayjs(b.frontmatter.publishedAt).isAfter(
+      dayjs(a.frontmatter.publishedAt),
+    )
+      ? 1
+      : -1
+  })
+  const transformed = sortedByDescPubDate.map((c) => ({
+    title: c.frontmatter.title,
+    slug: `/blog/${c.frontmatter.slug}`,
+    publishedAt: dayjs(c.frontmatter.publishedAt).format('DD MMMM YYYY'),
+  }))
+  return {
+    props: {
+      articles: transformed,
+    },
+  }
+}
 
 export default Home
