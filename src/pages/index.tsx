@@ -96,7 +96,7 @@ export const getStaticProps = async (): Promise<StaticPropsOut> => {
   const transformed = sortedByDescPubDate.map((c) => ({
     title: c.frontmatter.title,
     slug: `/blog/${c.frontmatter.slug}`,
-    publishedAt: dayjs(c.frontmatter.publishedAt).format('DD MMMM YYYY'),
+    publishedAt: dayjs(c.frontmatter.publishedAt).format('MMMM DD, YYYY'),
   }))
   return {
     props: {

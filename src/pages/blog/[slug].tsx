@@ -35,7 +35,7 @@ export const getStaticProps = async ({
     throw new Error(`file not found for slug: ${params.slug}`)
   }
   ours.frontmatter.publishedAt = dayjs(ours.frontmatter.publishedAt).format(
-    'DD MMMM YYYY',
+    'MMMM DD, YYYY',
   )
   return { props: { compiled: ours } }
 }
