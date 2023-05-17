@@ -46,7 +46,7 @@ const Article: React.FC<ComponentProps> = ({ compiled }) => {
       <Head {...compiled.frontmatter} />
       <article className="my-10">
         <div className="mb-6">
-          <h1 className="text-4xl">
+          <h1 className="text-3xl">
             <Link className="font-bold" href={compiled.frontmatter.slug}>
               {compiled.frontmatter.title}
             </Link>

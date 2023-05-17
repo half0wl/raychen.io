@@ -20,13 +20,13 @@ const HWithAnchor: React.FC<Props> = ({ h, id, children }) => {
   switch (h) {
     case H.h2:
       return (
-        <h2 id={id} className="mb-4 mt-8 text-3xl font-bold">
+        <h2 id={id} className="mb-4 mt-8 text-2xl font-bold">
           {children} {anchor}
         </h2>
       )
     case H.h3:
       return (
-        <h3 id={id} className="mb-4 mt-8 text-2xl font-bold">
+        <h3 id={id} className="mb-4 mt-8 text-xl font-bold">
           {children} {anchor}
         </h3>
       )

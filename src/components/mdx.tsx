@@ -1,13 +1,38 @@
+/* eslint @typescript-eslint/no-explicit-any: 0 */
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import HWithAnchor, { H } from '@/components/h-with-anchor'
+import styled from 'styled-components'
+
+const UL = styled.ul`
+  list-style-type: square;
+  li {
+    padding-left: 2px;
+    margin-top: 10px;
+  }
+  ul {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    list-style-type: circle;
+    li {
+      padding-left: 2px;
+      margin-left: 16px;
+    }
+  }
+`
+
+const P = styled.p`
+  letter-spacing: 0.15px;
+  font-size: 16px;
+  line-height: 26px;
+`
 
 const components = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   blockquote: (props: any) => (
     <blockquote
       {...props}
-      className="border-l-4 border-pink-700 py-0.5 pl-4 text-slate-500"
+      className="border-l-4 py-0.5 pl-4 text-slate-500"
+      style={{ borderColor: '#bc6800' }}
     >
       {props.children}
     </blockquote>
@@ -15,37 +40,27 @@ const components = {
   H2: (props: any) => <HWithAnchor h={H.h2} {...props} />,
   H3: (props: any) => <HWithAnchor h={H.h3} {...props} />,
   p: (props: any) => (
-    <p {...props} className="my-4 text-xl leading-7">
+    <P {...props} className="my-4">
       {props.children}
-    </p>
+    </P>
   ),
   ul: (props: any) => (
-    <ul {...props} className="my-6 list-inside list-disc text-xl">
+    <UL {...props} className="my-6">
       {props.children}
-    </ul>
-  ),
-  ol: (props: any) => (
-    <ol {...props} className="my-6 list-inside list-decimal text-xl">
-      {props.children}
-    </ol>
-  ),
-  li: (props: any) => (
-    <li {...props} className="my-4 pl-8">
-      {props.children}
-    </li>
+    </UL>
   ),
   h2: (props: any) => (
-    <h2 {...props} className="mb-4 mt-8 text-3xl font-bold">
+    <h2 {...props} className="mb-4 mt-8 text-2xl font-bold">
       {props.children}
     </h2>
   ),
   h3: (props: any) => (
-    <h3 {...props} className="mb-4 mt-8 text-2xl font-bold">
+    <h3 {...props} className="mb-4 mt-8 text-xl font-bold">
       {props.children}
     </h3>
   ),
   h4: (props: any) => (
-    <h4 {...props} className="mb-4 mt-8 text-xl font-bold">
+    <h4 {...props} className="mb-4 mt-8 font-bold">
       {props.children}
     </h4>
   ),
@@ -69,7 +84,7 @@ const components = {
         style={hopscotch}
         useInlineStyles
         showLineNumbers
-        customStyle={{ fontSize: '1.2rem' }}
+        customStyle={{ fontSize: '1rem' }}
       >
         {cleaned}
       </SyntaxHighlighter>
