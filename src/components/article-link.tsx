@@ -1,3 +1,4 @@
+// foo
 import Link from 'next/link'
 
 type ExternalSite = { name: string; siteLink: string; articleLink: string }
