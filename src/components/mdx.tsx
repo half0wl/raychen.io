@@ -1,13 +1,15 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { hopscotch } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import HWithAnchor, { H } from '@/components/h-with-anchor'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import styled from 'styled-components'
 
 const UL = styled.ul`
+  font-size: 16px;
+  list-style-position: inside;
   list-style-type: square;
   li {
-    padding-left: 2px;
+    padding-left: 24px;
     margin-top: 10px;
   }
   ul {
@@ -81,7 +83,7 @@ const components = {
     return match ? (
       <SyntaxHighlighter
         language={match[1]}
-        style={hopscotch}
+        style={atomOneDark}
         useInlineStyles
         showLineNumbers
         customStyle={{ fontSize: '1rem' }}
