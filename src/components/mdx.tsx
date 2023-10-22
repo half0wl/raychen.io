@@ -7,39 +7,32 @@ import styled from 'styled-components'
 import { match } from 'ts-pattern'
 
 const UL = styled.ul`
-  font-size: 16px;
-  list-style-position: inside;
+  font-size: 1.1em;
+  font-weight: 400;
+  line-height: 1.6em;
+  letter-spacing: -0.15px;
   list-style-type: square;
+  margin-left: 2em;
   li {
-    padding-left: 24px;
-    margin-top: 10px;
-  }
-  ul {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    list-style-type: circle;
-    li {
-      padding-left: 2px;
-      margin-left: 16px;
-    }
+    margin-bottom: 0.6em;
   }
 `
 
 const H2 = styled.h2`
   font-size: 1.4rem;
-  margin: 1rem 0;
+  margin: 1.1rem 0;
   font-weight: 800;
 `
 
 const H3 = styled.h3`
   font-size: 1.3rem;
-  margin: 1rem 0;
+  margin: 1.1rem 0;
   font-weight: 700;
 `
 
 const H4 = styled.h4`
   font-size: 1.2rem;
-  margin: 1rem 0;
+  margin: 1.1rem 0;
   font-weight: 600;
 `
 
@@ -48,6 +41,7 @@ const P = styled.p`
   font-weight: 400;
   line-height: 1.6em;
   letter-spacing: -0.15px;
+  margin: 1rem 0;
 `
 
 const HWithAnchor: React.FC<{
@@ -87,17 +81,8 @@ const components = {
       {props.children}
     </blockquote>
   ),
-  p: (props: any) => (
-    <P {...props} className="my-4">
-      {props.children}
-    </P>
-  ),
-  ul: (props: any) => (
-    <UL {...props} className="my-6">
-      {props.children}
-    </UL>
-  ),
-
+  p: (props: any) => <P {...props}>{props.children}</P>,
+  ul: (props: any) => <UL {...props}>{props.children}</UL>,
   h1: () => {
     throw new Error('Forbidden h1 in article content body')
   },
@@ -161,6 +146,14 @@ const components = {
       >
         <source type="video/mp4" src={`${props.link}#t=${props.startAt}`} />
       </video>
+    )
+  },
+  ImageWithCaption: (props: any) => {
+    return (
+      <div className="mb-6 mt-3 flex flex-col items-center">
+        <img src={props.src} alt={props.alt} />
+        <span className="mt-2 text-sm text-gray-500">{props.caption}</span>
+      </div>
     )
   },
 }
