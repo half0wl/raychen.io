@@ -17,7 +17,7 @@ const Home: React.FC<ComponentProps> = ({ articles }) => {
   return (
     <>
       <Head />
-      <div className="mt-10 md:mt-20">
+      <div className="mt-10 md:mt-12">
         <section className="flex flex-col gap-8 md:flex-row md:items-center">
           <Image
             src="/owl.png"
@@ -26,34 +26,38 @@ const Home: React.FC<ComponentProps> = ({ articles }) => {
             width={200}
             height={200}
           />
-          <article className="">
+          <article>
             <h1 className="mb-4 text-2xl">
-              Hello! I'm <span className="font-bold">Ray</span>.
+              Hi, I’m <span className="font-bold tracking-tighter">Ray</span>.
             </h1>
             <p className="mb-4 text-lg">
-              I love building stuff and writing. I work on arming developers
-              with infrastructure superpowers at{' '}
+              I enjoy building stuff at the intersection of
+              software«~»humans«~»infrastructure. I work on arming developers
+              with superpowers at{' '}
               <Link href="https://railway.app/?utm_source=raychen.io">
                 Railway
               </Link>
               .
             </p>
-            <p className="text-lg">
-              This is my personal scratchpad filled with random bits of
-              knowledge.
+            <p className="mb-4 text-lg">
+              You can find me on{' '}
+              <Link href="https://twitter.com/rayofbytes">Twitter/X</Link>, or{' '}
+              <Link href="https://github.com/half0wl">GitHub</Link>.
             </p>
           </article>
         </section>
         <section className="mt-10 md:mt-20">
-          <h2 className="mb-4 text-2xl font-semibold">Blog</h2>
+          <h2 className="mb-4 text-xl font-semibold tracking-tighter">Blog</h2>
           <ArticleList articles={articles} />
         </section>
         <section className="mt-4 md:mt-8">
           {/* @TODO Move to a static data file */}
-          <h2 className="mb-4 text-2xl font-semibold">Projects</h2>
+          <h2 className="mb-4 text-xl font-semibold tracking-tighter">
+            Projects
+          </h2>
           <p className="mb-4">
-            A list of stuff that I hack on &mdash; 🟢 = active, 🟠 =
-            WIP/prototype, 🪦 dead/unmaintaned
+            A list of stuff that I hack on [🟢 = active, 🟠 = WIP/prototype, 🪦
+            dead/unmaintaned]
           </p>
           <ul>
             <li className="mb-2">
@@ -162,7 +166,7 @@ export const getStaticProps = async (): Promise<StaticPropsOut> => {
       pin: c.frontmatter.pin ?? false,
     }))
     .map((c) => ParsedArticleSchema.parse(c))
-    .sort((a, b) => Number(b.pin) - Number(a.pin))  // Pinned articles first
+    .sort((a, b) => Number(b.pin) - Number(a.pin)) // Pinned articles first
   return {
     props: {
       articles: transformed,
