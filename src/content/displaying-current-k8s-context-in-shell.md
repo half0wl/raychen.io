@@ -1,8 +1,8 @@
 ---
-title: "How-to: Display current Kubernetes context in shell prompt"
-slug: "how-to-display-current-k8s-context-in-shell-prompt"
+title: "Displaying current Kubernetes context in shell"
+slug: "display-current-k8s-context-in-shell"
 publishedAt: "2022-11-14"
-keywords: "how-to, kubernetes, context, shell"
+keywords: "kubernetes, context, shell, prompt"
 ---
 
 When working with multiple Kubernetes clusters, you need to know which cluster
@@ -11,7 +11,6 @@ be disastrous!
 
 Instead of remembering what's currently set in `KUBECTL_CONTEXT`, I inject it
 into my shell's prompt using this function:
-
 
 ```bash
 # ~/.zshrc
