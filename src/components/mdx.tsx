@@ -1,8 +1,10 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
-import HWithAnchor, { H } from '@/components/h-with-anchor'
+import Link from 'next/link'
+import React from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import styled from 'styled-components'
+import { match } from 'ts-pattern'
 
 const UL = styled.ul`
   font-size: 16px;
@@ -23,11 +25,57 @@ const UL = styled.ul`
   }
 `
 
-const P = styled.p`
-  letter-spacing: 0.15px;
-  font-size: 16px;
-  line-height: 26px;
+const H2 = styled.h2`
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  font-weight: 800;
 `
+
+const H3 = styled.h3`
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  font-weight: 700;
+`
+
+const H4 = styled.h4`
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  font-weight: 600;
+`
+
+const P = styled.p`
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6em;
+  letter-spacing: -0.15px;
+`
+
+const HWithAnchor: React.FC<{
+  h: 'h2' | 'h3'
+  id: string
+  children: React.ReactNode
+}> = ({ h, id, children }) => {
+  const anchor = (
+    <Link
+      href={`#${id}`}
+      className="absolute left-[-2%] opacity-20 hover:opacity-100"
+    >
+      #
+    </Link>
+  )
+  return match(h)
+    .with('h2', () => (
+      <H2 id={id} className="relative">
+        {anchor} {children}
+      </H2>
+    ))
+    .with('h3', () => (
+      <H3 id={id} className="relative">
+        {anchor} {children}
+      </H3>
+    ))
+    .exhaustive()
+}
 
 const components = {
   blockquote: (props: any) => (
@@ -39,8 +87,6 @@ const components = {
       {props.children}
     </blockquote>
   ),
-  H2: (props: any) => <HWithAnchor h={H.h2} {...props} />,
-  H3: (props: any) => <HWithAnchor h={H.h3} {...props} />,
   p: (props: any) => (
     <P {...props} className="my-4">
       {props.children}
@@ -51,21 +97,24 @@ const components = {
       {props.children}
     </UL>
   ),
-  h2: (props: any) => (
-    <h2 {...props} className="mb-4 mt-8 text-2xl font-bold">
+
+  h1: () => {
+    throw new Error('Forbidden h1 in article content body')
+  },
+  h2: (props: any) => <H2 {...props}>{props.children}</H2>,
+  h3: (props: any) => <H3 {...props}>{props.children}</H3>,
+  h4: (props: any) => <H4 {...props}>{props.children}</H4>,
+  H2A: (props: any) => (
+    <HWithAnchor h="h2" {...props}>
       {props.children}
-    </h2>
+    </HWithAnchor>
   ),
-  h3: (props: any) => (
-    <h3 {...props} className="mb-4 mt-8 text-xl font-bold">
+  H3A: (props: any) => (
+    <HWithAnchor h="h3" {...props}>
       {props.children}
-    </h3>
+    </HWithAnchor>
   ),
-  h4: (props: any) => (
-    <h4 {...props} className="mb-4 mt-8 font-bold">
-      {props.children}
-    </h4>
-  ),
+
   code: ({
     className,
     children,
@@ -86,7 +135,11 @@ const components = {
         style={atomOneDark}
         useInlineStyles
         showLineNumbers
-        customStyle={{ fontSize: '1rem' }}
+        customStyle={{
+          fontSize: '1.1rem',
+          marginTop: '1rem',
+          marginBottom: '1rem',
+        }}
       >
         {cleaned}
       </SyntaxHighlighter>

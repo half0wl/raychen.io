@@ -1,12 +1,12 @@
-import ArticleLink from '@/components/article-link'
-import dayjs from 'dayjs'
+import ArticleList from '@/components/article-list'
 import Head from '@/components/head'
-import { compileAllMdx } from '@/lib/build'
+import { ParsedArticle, ParsedArticleSchema, compileAllMdx } from '@/lib/build'
+import dayjs from 'dayjs'
 import Image from 'next/image'
 import Link from 'next/link'
 
 interface ComponentProps {
-  articles: { title: string; slug: string; publishedAt: string }[]
+  articles: ParsedArticle[]
 }
 
 interface StaticPropsOut {
@@ -21,7 +21,7 @@ const Home: React.FC<ComponentProps> = ({ articles }) => {
         <section className="flex flex-col gap-8 md:flex-row md:items-center">
           <Image
             src="/owl.png"
-            className="rounded-full border-8 border-slate-400 shadow-sm"
+            className="rounded-full border-8 border-slate-400 shadow-md"
             alt="Logo"
             width={200}
             height={200}
@@ -45,37 +45,94 @@ const Home: React.FC<ComponentProps> = ({ articles }) => {
           </article>
         </section>
         <section className="mt-10 md:mt-20">
-          <h2 className="mb-4 text-2xl font-semibold">Writing</h2>
+          <h2 className="mb-4 text-2xl font-semibold">Blog</h2>
+          <ArticleList articles={articles} />
+        </section>
+        <section className="mt-4 md:mt-8">
+          {/* @TODO Move to a static data file */}
+          <h2 className="mb-4 text-2xl font-semibold">Projects</h2>
+          <p className="mb-4">
+            A list of stuff that I hack on &mdash; 🟢 = active, 🟠 =
+            WIP/prototype, 🪦 dead/unmaintaned
+          </p>
           <ul>
-            {articles.map((a) => (
-              <li key={a.slug}>
-                <ArticleLink {...a} />
-              </li>
-            ))}
-            <li>
-              <ArticleLink
-                title="Remote-controlling macOS with a Python Telegram bot"
-                publishedAt="September 20, 2017"
-                inExternalSite={{
-                  articleLink:
-                    'https://chatbotslife.com/remote-controlling-macos-with-a-python-telegram-bot-d656d2e00226?utm_source=raychen.io',
-                  siteLink: 'https://chatbotslife.com/?utm_source=raychen.io',
-                  name: 'Chatbots Life',
-                }}
-              />
+            <li className="mb-2">
+              <>
+                🟢&nbsp;
+                <Link className="font-mono text-lg" href="/">
+                  raychen.io
+                </Link>
+                : You're here!
+              </>
             </li>
-
-            <li>
-              <ArticleLink
-                title="Server-rendered charts in Django"
-                publishedAt="September 04, 2017"
-                inExternalSite={{
-                  articleLink:
-                    'https://hackernoon.com/server-rendered-charts-in-django-2604f903389d?utm_source=raychen.io',
-                  siteLink: 'https://hackernoon.com/?utm_source=raychen.io',
-                  name: 'Hacker Noon',
-                }}
-              />
+            <li className="mb-2">
+              <>
+                🟢&nbsp;
+                <Link className="font-mono text-lg" href="/">
+                  money.ts
+                </Link>
+                : A TypeScript library for working with monetary values.
+              </>
+            </li>
+            <li className="mb-2">
+              <>
+                🟠&nbsp;
+                <Link className="font-mono text-lg" href="/">
+                  php-statemachine
+                </Link>
+                : A PHP library for working with state machines.
+              </>
+            </li>
+            <li className="mb-2">
+              <>
+                🟠&nbsp;
+                <Link className="font-mono text-lg" href="/">
+                  railway-chord
+                </Link>
+                : Log egress for Railway projects.
+              </>
+            </li>
+            <li className="mb-2">
+              <>
+                🟠&nbsp;
+                <Link
+                  className="font-mono text-lg"
+                  href="https://github.com/half0wl/openai-api-playground"
+                >
+                  openai-api-playground
+                </Link>
+                : An alternative UI for playing with ChatGPT.
+              </>
+            </li>
+            <li className="mb-2">
+              <>
+                🪦&nbsp;
+                <Link className="font-mono text-lg" href="/">
+                  simon
+                </Link>
+                : Minimal macOS menu bar system monitor.
+              </>
+            </li>
+            <li className="mb-2">
+              <>
+                🪦&nbsp;
+                <Link
+                  className="font-mono text-lg"
+                  href="https://github.com/half0wl/tg-mac-remote"
+                >
+                  tg-mac-remote
+                </Link>
+                : Remote-control macOS using a Telegram chatbot.
+              </>
+            </li>
+            <li className="mb-2">
+              <>
+                🪦&nbsp;
+                <Link className="font-mono text-lg" href="/">
+                  datagovsg-api
+                </Link>
+                : Python API wrapper for data.gov.sg.
+              </>
             </li>
           </ul>
         </section>
@@ -93,11 +150,17 @@ export const getStaticProps = async (): Promise<StaticPropsOut> => {
       ? 1
       : -1
   })
-  const transformed = sortedByDescPubDate.map((c) => ({
-    title: c.frontmatter.title,
-    slug: `/blog/${c.frontmatter.slug}`,
-    publishedAt: dayjs(c.frontmatter.publishedAt).format('MMMM DD, YYYY'),
-  }))
+  const transformed = sortedByDescPubDate
+    .map((c) => ({
+      title: c.frontmatter.title,
+      slug: c.frontmatter.publication
+        ? c.frontmatter.slug
+        : `/blog/${c.frontmatter.slug}`,
+      publishedAt: dayjs(c.frontmatter.publishedAt).format('DD-MMM-YYYY'),
+      publication: c.frontmatter.publication ?? null,
+      publicationUrl: c.frontmatter.publicationUrl ?? null,
+    }))
+    .map((c) => ParsedArticleSchema.parse(c))
   return {
     props: {
       articles: transformed,

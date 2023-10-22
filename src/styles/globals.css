@@ -33,14 +33,15 @@ main a:hover,
 nav a:hover,
 nav ul a:hover {
   color: #aa3d3d;
-  font-weight: 800;
   text-decoration: underline;
 }
 
 :not(pre) > code {
-  background-color: #ffe8ce;
-  padding: 3px;
+  background-color: #ffddb7;
   font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-weight: 600;
 }
 
 :not(pre) > h2 code {

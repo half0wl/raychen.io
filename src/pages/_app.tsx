@@ -7,7 +7,7 @@ import type { AppProps } from 'next/app'
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <StyledComponentsRegistry>
-      <div className="mx-auto max-w-4xl p-3">
+      <div className="mx-auto max-w-5xl p-3">
         <Nav />
         <main>
           <Component {...pageProps} />

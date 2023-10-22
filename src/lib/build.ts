@@ -3,11 +3,24 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import path from 'path'
 import remarkGfm from 'remark-gfm'
+import z from 'zod'
+
+export const ParsedArticleSchema = z.object({
+  title: z.string(),
+  publishedAt: z.string(),
+  publication: z.string().nullable(),
+  publicationUrl: z.string().nullable(),
+  slug: z.string(),
+})
+
+export type ParsedArticle = z.infer<typeof ParsedArticleSchema>
 
 export interface FrontmatterRaw {
   title: string
   slug: string
   publishedAt: string
+  publication?: string
+  publicationUrl?: string
   description?: string
   keywords?: string
   ogImageLink?: string
