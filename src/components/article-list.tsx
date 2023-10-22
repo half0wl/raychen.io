@@ -7,8 +7,9 @@ const ArticleList: React.FC<{ articles: ParsedArticle[] }> = ({ articles }) => {
       {articles.map((a) => (
         <li className="mb-2" key={a.slug}>
           <span className="mr-2 font-mono text-slate-500">{a.publishedAt}</span>
+          {a.publication && <span className="text-slate-500">🔗 </span>}
+          {a.pin && <span className="text-slate-500">🌠 </span>}
           <Link className="text-lg" href={a.slug}>
-            {a.publication && '⧉ '}
             {a.title}
           </Link>
           {a.publication && (
@@ -19,7 +20,8 @@ const ArticleList: React.FC<{ articles: ParsedArticle[] }> = ({ articles }) => {
                 <Link href={a.publicationUrl}>{a.publication}</Link>
               ) : (
                 a.publication
-              )}]
+              )}
+              ]
             </span>
           )}
         </li>

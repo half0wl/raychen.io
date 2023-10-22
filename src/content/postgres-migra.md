@@ -2,6 +2,7 @@
 title: "Managing Postgres schema changes with Migra"
 slug: "managing-postgres-schema-changes-with-migra"
 publishedAt: "2022-11-05"
+pin: true
 keywords: "postgres, migra, schema"
 ---
 

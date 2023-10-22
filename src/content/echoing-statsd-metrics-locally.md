@@ -1,8 +1,8 @@
 ---
 title: "Echo-ing StatsD metrics locally"
 slug: "echoing-statsd-metrics-locally"
-keywords: "statsd, debug, echo, local"
 publishedAt: "2023-03-22"
+keywords: "statsd, debug, echo, local"
 ---
 
 It's useful to know what StatsD metrics you're sending locally before it

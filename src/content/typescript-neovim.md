@@ -2,6 +2,7 @@
 title: "neovim + TypeScript = ⚡️"
 slug: "neovim-typescript"
 publishedAt: "2023-03-15"
+pin: true
 keywords: "neovim, typescript"
 ---
 

@@ -2,6 +2,7 @@
 title: "Building effective remote work environments"
 slug: "building-effective-remote-work-environments"
 publishedAt: "2023-01-11"
+pin: true
 keywords: "remote work"
 ---
 

@@ -159,8 +159,10 @@ export const getStaticProps = async (): Promise<StaticPropsOut> => {
       publishedAt: dayjs(c.frontmatter.publishedAt).format('DD-MMM-YYYY'),
       publication: c.frontmatter.publication ?? null,
       publicationUrl: c.frontmatter.publicationUrl ?? null,
+      pin: c.frontmatter.pin ?? false,
     }))
     .map((c) => ParsedArticleSchema.parse(c))
+    .sort((a, b) => Number(b.pin) - Number(a.pin))  // Pinned articles first
   return {
     props: {
       articles: transformed,
