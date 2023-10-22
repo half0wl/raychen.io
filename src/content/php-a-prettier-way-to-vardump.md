@@ -2,7 +2,7 @@
 title: "PHP: A prettier way to var_dump"
 slug: "php-a-prettier-way-to-vardump"
 publishedAt: "2022-10-02"
-keywords: "php, debugging, vardump"
+keywords: "php, debugging, pretty, vardump"
 ---
 
 There are various ways to dump information about a variable/object in PHP.
@@ -20,7 +20,7 @@ unreadable:
 This happens because none of them formats the output for HTML rendering (as it
 shouldn't!), which makes it extra difficult to parse when you have a large object.
 
-## Here's how I make it pretty:
+<H2A id="make-it-pretty">Here's how I make it pretty:</H2A>
 
 ```php
 <?php
