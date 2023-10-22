@@ -1,12 +1,13 @@
 ---
-title: "Managing Postgres Schema Changes With Migra"
+title: "Managing Postgres schema changes with Migra"
 slug: "managing-postgres-schema-changes-with-migra"
 publishedAt: "2022-11-05"
+pin: true
 keywords: "postgres, migra, schema"
 ---
 
 [`migra`](https://github.com/djrobstep/migra) is a great tool for tracking
-changes in a Postgres schema without relying on ORMs.
+changes in a Postgres schema for ORM-less setups.
 
 It generates schema diffs between two different Postgres instances. **i.e.**,
 on an instance A with the desired schema, and instance B with current schema,
@@ -16,56 +17,54 @@ bring its schema up to parity with A.
 Here's a diagram to help visualize this:
 
 ```sh
-.               (current)                       (new)
-.            ---------------               ---------------
-.            | Instance $A |               | Instance $A |
-.            | Schema V0   | -- Change --> | Schema V1   |
-.            ---------------               ---------------
-.                                                |
-.                                |---------------|
-.                                |
-.                                v
-.           ===============================================
-.           |               $ migra diff                  |
-.           |         Against Instance B (current)        |
-.           ===============================================
-.                                |
-.                                |
-.                                v
-.                            (current)
-.                         -----------------
-.                         |  Instance $B  |
-.                         |  Schema V0    |
-.                         -----------------
-.                                |
-.                                |
-.                                v
-.           ===============================================
-.           | Produces an upgrade SQL script to Schema V1 |
-.           |             >> changes.sql                  |
-.           ===============================================
-.                                |
-.                                |
-.                                v
-.           ===============================================
-.           |           Review and apply to $B            |
-.           |   $ psql postgresql://$B -1 -f changes.sql  |
-.           ===============================================
-.                                |
-.                                |
-.                                v
-.                              (new)
-.                         -----------------
-.                         |  Instance $B  |
-.                         |  Schema V1    |
-.                         -----------------
+.         (current)                       (new)
+.      ---------------               ---------------
+.      | Instance $A |               | Instance $A |
+.      | Schema V0   | -- Change --> | Schema V1   |
+.      ---------------               ---------------
+.                                          |
+.                          |---------------|
+.                          |
+.                          v
+.     ===============================================
+.     |               $ migra diff                  |
+.     |         Against Instance B (current)        |
+.     ===============================================
+.                          |
+.                          |
+.                          v
+.                      (current)
+.                   -----------------
+.                   |  Instance $B  |
+.                   |  Schema V0    |
+.                   -----------------
+.                          |
+.                          |
+.                          v
+.     ===============================================
+.     | Produces an upgrade SQL script to Schema V1 |
+.     |             >> changes.sql                  |
+.     ===============================================
+.                          |
+.                          |
+.                          v
+.     ===============================================
+.     |           Review and apply to $B            |
+.     |   $ psql postgresql://$B -1 -f changes.sql  |
+.     ===============================================
+.                          |
+.                          |
+.                          v
+.                        (new)
+.                   -----------------
+.                   |  Instance $B  |
+.                   |  Schema V1    |
+.                   -----------------
 ```
 
 This allows us to make schema tweaks on a local or dev instance, generate a diff against production, review and apply the generated diff to production, and keep the generated diff in source control.
 
-> **P/S**: Tracking changes in source control can be achieved with just a single version-controlled file, but in my opinion, it leaves much to be desired: if there are incompatible changes between different versions, local/dev environments may need to get nuked in order to apply the full schema again, and browsing through a series of sequential files to view point-in-time changes is more ergonomical than `$ git blame`. As a counterpoint, it does maintain a single source-of-truth for the _current state_ of the schema which is a desireable trait. Only if there were Git for databases! Like [PlanetScale](https://planetscale.com)’s [awesome](https://planetscale.com/docs/concepts/planetscale-workflow) [branching](https://planetscale.com/docs/concepts/branching) feature that even works for [data](https://planetscale.com/docs/concepts/data-branching).
-
-## Example
+<H2A id="usage">Usage</H2A>
 
 `migra` is easy to use:
 ```bash
@@ -112,9 +111,8 @@ $ migra --unsafe \
 alter table "app"."users" add column "last_login" timestamp without time zone;
 ```
 
-Now you can see why it's a “schema diff” tool!
-
-You can pipe `migra`'s output to a file, review and/or modify it, and apply the changes when you're satisfied:
+Now you can see why it's a schema diff tool. You can then pipe the output to
+a file, review and/or modify it, and apply the changes when you're satisfied:
 
 ```bash
 # Output to file
@@ -146,19 +144,41 @@ $ migra --unsafe \
 #   => No output, because both instances are at parity
 ```
 
-(See [Appendix: Demostration set-up](#appendix-demostration-set-up) for the demo set-up.)
+<H2A id="why-unsafe-flag">Why unsafe flag?</H2A>
 
-## Why `--unsafe` flag?
+Without `--unsafe`, `migra` will not generate destructive statements. We want
+them because dropping columns/indexes/etc. is a valid schema tweak, so the
+flag allows us to (intentionally) retain destructive commands such as
+`DROP ...`.
 
-Without `--unsafe`, `migra` will not generate destructive statements. We want them because dropping columns/indexes/etc. is a valid schema tweak, so we invoke `migra` with the `--unsafe` flag to intentionally retain destructive commands such as `DROP ...`. Check out https://databaseci.com/docs/migra/options for more information.
+Check out https://databaseci.com/docs/migra/options for more information.
 
-## Usage warning: Be careful about renames!
+<H2A id="warning-renames">Usage warning: Be careful about renames!</H2A>
 
-Most rename operations are generated as “drop -> create,” meaning that it **re-creates** the object instead of renaming it in-place. If you rename a table, column, primary key, etc., it will generate a `DROP ...` statement and `CREATE ...`. Check out [migra/issues/29](https://github.com/djrobstep/migra/issues/29) & [migra/issues/213](https://github.com/djrobstep/migra/issues/213) for more information.
+Most rename operations are generated as a `DROP foo;` -> `CREATE foo;`
+statement, meaning that it **re-creates** the object instead of renaming it
+in-place. This will happen if when you rename a table, column, primary key,
+etc.
 
-## Wrap-up
+Check out [migra/issues/29](https://github.com/djrobstep/migra/issues/29) and
+[migra/issues/213](https://github.com/djrobstep/migra/issues/213) for more
+information.
 
-This is only a short demostration on how you can use `migra` for handling pure SQL migrations. I hope this gives you some idea on how you can incorporate it in your workflow!
+## On tracking schema changes
+
+Tracking changes in source control can be achieved with just a single
+version-controlled SQL file, but in my opinion, it leaves much to be desired:
+
+- If there are incompatible changes between different database versions,
+local/dev environments may need to get nuked in order to apply the full
+schema again
+- Browsing through a series of sequential files to view point-in-time changes
+is more ergonomical than `$ git blame`
+
+As a counterpoint, a single file helps maintain a single source-of-truth for
+the _current state_ of the schema, which is a desireable trait.
+
+Only if there were Git for databases!
 
 ## Appendix: Demostration set-up
 

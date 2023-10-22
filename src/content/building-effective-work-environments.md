@@ -2,6 +2,7 @@
 title: "Building effective remote work environments"
 slug: "building-effective-remote-work-environments"
 publishedAt: "2023-01-11"
+pin: true
 keywords: "remote work"
 ---
 
@@ -21,7 +22,7 @@ remote-and-synchronous. Take from it what you will :-)
 > This is incomplete! It will always be a work in progress. I'll be updating
 > this as I flesh out more from my notes.
 
-<H2 id="toc">Table of Contents</H2>
+<H2A id="toc">Table of Contents</H2A>
 
 * [Communications](#communications)
 * [Documentation](#documentation)
@@ -29,9 +30,9 @@ remote-and-synchronous. Take from it what you will :-)
 * [Logistics](#logistics)
 * [Misc.](#misc)
 
-<H2 id="communications">Communications</H2>
+<H2A id="communications">Communications</H2A>
 
-<H3 id="async-by-default">Be asynchronous by default</H3>
+<H3A id="async-by-default">Be asynchronous by default</H3A>
 
 Meetings and chats are synchronous: it requires all parties to be in the same
 room at the same time. This does not work well for remote communications,
@@ -48,7 +49,7 @@ leads to higher quality discussions** because people no longer have to think
 and answer on-the-spot. (Think about it: you write better e-mails than text
 messages, right? ...Right?)
 
-<H3 id="work-not-presence">Focus on work, not presence</H3>
+<H3A id="work-not-presence">Focus on work, not presence</H3A>
 
 Chat platforms such as Slack, MS Teams, etc. tend to give an **illusion of
 asynchronousity**. Short-form and chat-oriented messaging in general gives an
@@ -72,7 +73,7 @@ it's context-aware, you always know the topic,  you always know where a
 conversation starts and where it ends (how far back up did you have to scroll
 on Slack the last time you were looped into an ongoing conversation? ;-)).
 
-<H3 id="communicate-explicitly">Communicate explicitly, and intentionally</H3>
+<H3A id="communicate-explicitly">Communicate explicitly, and intentionally</H3A>
 
 It can take **longer to conclude conversations** that are not happening in
 real-time, so it helps to **be upfront about the priority of the discussion**.
@@ -88,7 +89,7 @@ missing from text. You can try using short-form video messaging tools such as
 [Loom](https://loom.com) to augment your communications (it's also great for
 short async updates, demos, etc.!)
 
-<H3 id="socialize">Make time for socializing</H3>
+<H3A id="socialize">Make time for socializing</H3A>
 
 Remote work can be isolating for many. Humans are naturally social, and when
 you're remote, you miss out on a lot of interactions with your co-workers.
@@ -103,16 +104,16 @@ This is a very tricky issue to tackle because there is nothing that can
 replace real-world connections. You should try to conduct regular company/team
 off-sites if your finances allow.
 
-<H2 id="documentation">Documentation</H2>
+<H2A id="documentation">Documentation</H2A>
 
-<H3 id="write">Write, write, write</H3>
+<H3A id="write">Write, write, write</H3A>
 
 Documentation is the single greatest lever you can pull to 10x everything.
 I personally think that it's one of the best selling points about remote work.
 It gives you a **body of immortalized institutional knowledge** by forcing you to
 write and document like nothing else.
 
-<H3 id="source-of-truth">It's your source-of-truth</H3>
+<H3A id="source-of-truth">It's your source-of-truth</H3A>
 
 Make your documentation the source-of-truth for everything. If somebody on
 the other side of Earth needs your expertise, their first thought should be
@@ -120,7 +121,7 @@ the other side of Earth needs your expertise, their first thought should be
 so I'll wait for the next day to work on this." If somebody has a question,
 they should first consult your docs, before they consult people.
 
-<H3 id="Tooling">Tooling helps</H3>
+<H3A id="Tooling">Tooling helps</H3A>
 
 I recommend using a dedicated tool for documentation, and keep it simple.
 Look for something with:
@@ -145,7 +146,7 @@ Or you can go ham with this and build your own using a variety of wiki software,
 static site generators, etc. I find that [GitBook](https://www.gitbook.com/)
 strikes a nice balance here.
 
-<H3 id="update-docs-diligently">Diligently keep docs up-to-date</H3>
+<H3A id="update-docs-diligently">Diligently keep docs up-to-date</H3A>
 
 Outdated
 documentation is not just useless, it can be harmful - it's like using a
@@ -154,7 +155,7 @@ can help with this by reminding you to check and verify that a document is
 up-to-date at specific intervals ([Slab](https://slab.com/) is one). Or
 just do a documentation go-over once every quarter.
 
-<H3 id="documentation-is-not-knowledge">Communication is not knowledge</H3>
+<H3A id="documentation-is-not-knowledge">Communication is not knowledge</H3A>
 
 Please do not treat your communication platform as a wiki/
 knowledgebase. It can function as one, but it's the wrong tool. It works,
@@ -170,9 +171,9 @@ Aggressively put things into your documentation! If you think there's a slight
 chance something may be relevant to others, take a few minutes and put it
 there for posterity.
 
-<H2 id="working">Working</H2>
+<H2A id="working">Working</H2A>
 
-<H3 id="managing-time-zones">Managing time zones</H3>
+<H3A id="managing-time-zones">Managing time zones</H3A>
 
 In a distributed setting, time zone is your primary consideration. How you
 deal with it will make or break productivity and communications. Time zones
@@ -196,7 +197,7 @@ A good rule of thumb I've seen is Mondays for planning, Fridays for high-level
 status updates and retro, or you can squeeze both of them into a single day if
 your team is fine with it.
 
-<H3 id="check-ins-not-stand-ups">Check-ins, not stand-ups</H3>
+<H3A id="check-ins-not-stand-ups">Check-ins, not stand-ups</H3A>
 
 There's no productivity reason to requiring synchronous stand-ups conducted via
 video calls everyday.
@@ -217,7 +218,7 @@ the same amount of information from everybody in mere minutes, *and* you
 can easily look up what someone is doing at any point-in-time by searching for
 their update.
 
-<H3 id="planning">Planning</H3>
+<H3A id="planning">Planning</H3A>
 
 Or "sprint" / "cycle" planning, depending on the buzz-methodology you're
 subscribed to ;-)
@@ -246,7 +247,7 @@ and length of the cycle. You can either do a departmental all-hands, or break
 it out into smaller groups/teams. You can do engineering-wide all-hands. You
 can do a mix of them. Don't be afraid to experiment with this to see what works!
 
-<H3 id="meetings">Meetings</H3>
+<H3A id="meetings">Meetings</H3A>
 
 It goes without saying that you should try to keep this to a minimum. If you
 need to have a meeting, make sure you have a written pre-read, take notes,
@@ -292,9 +293,9 @@ a button click away from saving everybody time.
 Some people may be uncomfortable with being recorded, so make sure you get
 everyone's input on this before you introduce it.
 
-<H2 id="logistics">Logistics</H2>
+<H2A id="logistics">Logistics</H2A>
 
-<H3 id="hiring-job-descriptions">Hiring: Job Descriptions</H3>
+<H3A id="hiring-job-descriptions">Hiring: Job Descriptions</H3A>
 
 **Specify where you're hiring in**, and **specify your time zone constraints**.
 _"Is this US remote or global remote?"_ is a question you'll receive. If you
@@ -309,7 +310,7 @@ Add a "Compensation varies by location" disclaimer if you have to.
 Your time is valuable, and those are questions you'll undoubtedly receive, so
 just clarify them in the job description and save yourself time.
 
-<H3 id="hiring-compensation">Hiring: Compensation</H3>
+<H3A id="hiring-compensation">Hiring: Compensation</H3A>
 
 Start by figuring out if you want to pay people based on where they're located.
 
@@ -322,7 +323,7 @@ a percentage above market rates or a percentile that you pick.
 If you're doing CoL/location-adjusted compensation, you should also factor in
 what happens if the employee moves to a lower or higher CoL area.
 
-<H3 id="payroll-contractors">Payroll: Contractors on paper</H3>
+<H3A id="payroll-contractors">Payroll: Contractors on paper</H3A>
 
 You can hire employees as contractors on paper, and have them invoice you
 periodically. Your employee will need to figure out how they're taxed. In
@@ -343,7 +344,7 @@ an employee* and *exercise no control over the work*.
 Always clarify the legal and tax status of this set-up with the candidate!
 If you're both unsure, seek legal advice in their jurisdiction.
 
-<H3 id="payroll-eor">Payroll: Employer-of-Record (EOR)</H3>
+<H3A id="payroll-eor">Payroll: Employer-of-Record (EOR)</H3A>
 
 You can use an Employer-of-Record (EOR) service such as
 [Deel](https://www.deel.com/) or [Remote.com](https://www.remote.com/) to
@@ -358,7 +359,7 @@ labour laws, etc. This is the easiest way to hire globally without fuss,
 but you do pay a fee for such services, so you should bake this into your
 consideration.
 
-<H3 id="payroll-legal-entity">Payroll: Set-up a legal entity</H3>
+<H3A id="payroll-legal-entity">Payroll: Set-up a legal entity</H3A>
 
 You can set up a legal entity in the jurisdiction of your employee. I don't
 recommend this - it's the hardest and most resource-consuming. You need to be
@@ -370,7 +371,7 @@ The cost of doing this outweighs the benefits 99% of the time. However, it
 might make sense if you have more than >10 employees in the same country/legal
 jurisdiction.
 
-<H3 id="cultural-fit">On Cultural Fit</H3>
+<H3A id="cultural-fit">On Cultural Fit</H3A>
 
 Remote work isn't for everyone.
 
@@ -388,9 +389,9 @@ agnostic. It works better when the candidate is already experienced with remote
 work, ideally in a global setting, and works even better if your team has
 experience with it as well.
 
-<H2 id="misc">Misc.</H2>
+<H2A id="misc">Misc.</H2A>
 
-<H3 id="study-open-handbooks">Study open handbooks</H3>
+<H3A id="study-open-handbooks">Study open handbooks</H3A>
 
 There are companies with an "open handbook" philosophy where they publicly
 document anything from engineering flows, planning, internal processes, etc.

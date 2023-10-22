@@ -17,35 +17,31 @@ body {
   overflow: scroll;
   white-space: normal;
   background-color: #fff4e0;
-  color: #4d4d4d;
+  color: #2d2821;
 }
 
 main a {
   color: #aa3d3d;
   font-weight: 600;
-  text-decoration: underline;
 }
 
-main h1 a {
+article h1 a {
   color: unset;
-  text-decoration: unset;
 }
 
-main a:hover {
-  color: #aa3d3d;
-  font-weight: 600;
-  text-decoration: underline;
-}
-
+main a:hover,
+nav a:hover,
 nav ul a:hover {
   color: #aa3d3d;
-  font-weight: 600;
+  text-decoration: underline;
 }
 
 :not(pre) > code {
-  background-color: #ffe8ce;
-  padding: 3px;
+  background-color: #ffddb7;
   font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-weight: 600;
 }
 
 :not(pre) > h2 code {

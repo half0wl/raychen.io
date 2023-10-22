@@ -13,21 +13,24 @@ interface Props {
 
 const HWithAnchor: React.FC<Props> = ({ h, id, children }) => {
   const anchor = (
-    <Link href={`#${id}`} className="opacity-20 hover:opacity-100">
+    <Link
+      href={`#${id}`}
+      className="absolute left-[-2%] opacity-20 hover:opacity-100"
+    >
       #
     </Link>
   )
   switch (h) {
     case H.h2:
       return (
-        <h2 id={id} className="mb-4 mt-8 text-2xl font-bold">
-          {children} {anchor}
+        <h2 id={id} className="relative mb-4 mt-8 text-2xl font-bold">
+          {anchor} {children}
         </h2>
       )
     case H.h3:
       return (
-        <h3 id={id} className="mb-4 mt-8 text-xl font-bold">
-          {children} {anchor}
+        <h3 id={id} className="relative mb-4 mt-8 text-xl font-bold">
+          {anchor} {children}
         </h3>
       )
     default:
