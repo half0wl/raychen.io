@@ -11,13 +11,13 @@ const Nav = () => {
       </Link>
       <ul className="list-none [&>li:not(:first-child)]:ml-4 [&>li]:inline">
         <li>
-          <ExtLink href="https://github.com/half0wl">github</ExtLink>
+          <ExtLink href="https://github.com/half0wl">GitHub</ExtLink>
         </li>
         <li>
-          <ExtLink href="https://twitter.com/rayofbytes">twitter</ExtLink>
+          <ExtLink href="https://twitter.com/rayofbytes">Twitter/X</ExtLink>
         </li>
         <li>
-          <ExtLink href="mailto:ray@raychen.io">email</ExtLink>
+          <ExtLink href="mailto:ray@raychen.io">Email</ExtLink>
         </li>
       </ul>
     </nav>
