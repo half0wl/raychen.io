@@ -8,17 +8,18 @@ const ArticleList: React.FC<{ articles: ParsedArticle[] }> = ({ articles }) => {
         <li className="mb-2" key={a.slug}>
           <span className="mr-2 font-mono text-slate-500">{a.publishedAt}</span>
           <Link className="text-lg" href={a.slug}>
+            {a.publication && '⧉ '}
             {a.title}
           </Link>
           {a.publication && (
             <span>
               {' '}
-              &mdash;{' '}
+              [in{' '}
               {a.publicationUrl ? (
-                <Link href={a.publicationUrl}>⧉ {a.publication}</Link>
+                <Link href={a.publicationUrl}>{a.publication}</Link>
               ) : (
                 a.publication
-              )}
+              )}]
             </span>
           )}
         </li>
