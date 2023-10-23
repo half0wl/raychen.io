@@ -1,5 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  return res.status(200).json({ status: 'ok2' })
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  await new Promise((r) => setTimeout(r, 5000))
+  return res.status(200).json({ status: 'ok' })
 }
+
+export default handler
