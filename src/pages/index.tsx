@@ -26,7 +26,7 @@ const Home: React.FC<ComponentProps> = ({ articles, projects }) => {
       <Head />
       <section className="flex flex-col gap-6">
         <article className="space-y-4">
-          <div className="flex items-center space-x-4 md:space-x-8 md:space-y-2">
+          <div className="flex items-center space-x-6 md:space-x-8 md:space-y-2">
             <figure className="w-[400px] sm:w-[120px]">
               <Image
                 src="/profile.png"
@@ -41,7 +41,7 @@ const Home: React.FC<ComponentProps> = ({ articles, projects }) => {
               Hi, I’m{' '}
               <span className="text-2xl font-bold tracking-tighter">Ray</span>.
               I enjoy building stuff at the intersection of software, humans,
-              and infrastructure.
+              & infrastructure.
             </p>
           </div>
         </article>
