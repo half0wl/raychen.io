@@ -1,8 +1,8 @@
 ---
+pinned: true
 title: "Building effective remote work environments"
 slug: "building-effective-remote-work-environments"
 publishedAt: "2023-01-11"
-pin: true
 keywords: "remote work"
 ---
 
@@ -10,53 +10,31 @@ I've been fully remote for more than half a decade in a globally distributed
 environment. This is everything I've learned on how to make it work
 effectively from an organizational perspective.
 
-I'm publishing this because it's the kind of resource I wish I had. This
-originally started out as a compilation of scattered notes I've taken over
-the years, drawn from personal experiences, talking about remote work with
-others, articles and blog posts, public company handbooks, etc.
-
-This is geared towards building fully remote and distributed teams, so some of
-the advice in here may not apply or be practical to you especially if you're
-remote-and-synchronous. Take from it what you will :-)
-
-> This is incomplete! It will always be a work in progress. I'll be updating
-> this as I flesh out more from my notes.
-
-<H2A id="toc">Table of Contents</H2A>
-
-* [Communications](#communications)
-* [Documentation](#documentation)
-* [Working](#working)
-* [Logistics](#logistics)
-* [Misc.](#misc)
-
 <H2A id="communications">Communications</H2A>
 
 <H3A id="async-by-default">Be asynchronous by default</H3A>
 
 Meetings and chats are synchronous: it requires all parties to be in the same
 room at the same time. This does not work well for remote communications,
-especially if you're distributed. **Your start of the day will likely be
-somebody's end of the day**. Synchronous communications start to break down
-as you become more distributed.
+especially if you're distributed. You'll bottleneck the flow of information
+because your start of the day will likely be somebody's end of the day.
 
 Asynchronous communication fixes that by removing the constraint of requiring
-everyone to be in the same room. **Discussions can happen out-of-band, and
-anyone can pick up where it was left off**.
+everyone to be in the same room. Discussions can happen out-of-band, and
+anyone can pick up where it was left off.
 
-This naturally results in **longer-form discussions which
-leads to higher quality discussions** because people no longer have to think
-and answer on-the-spot. (Think about it: you write better e-mails than text
+This also naturally results in higher-quality discussions, as longer-form
+communication tends to be more organized and people no longer have to think
+and answer on-the-spot (think about it: you write better e-mails than text
 messages, right? ...Right?)
 
-<H3A id="work-not-presence">Focus on work, not presence</H3A>
+<H3A id="work-not-presence">Work, not presence</H3A>
 
-Chat platforms such as Slack, MS Teams, etc. tend to give an **illusion of
-asynchronousity**. Short-form and chat-oriented messaging in general gives an
-**expectation of an immediate reply**. If you've ever been pinged for
-non-urgent stuff when you're in the middle of something, you know how
-distracting it can be! It's super easy to get into this trap and reinforce
-it unknowingly.
+Chat platforms such as Slack, MS Teams, etc. tend to give an illusion of
+asynchronousity. Short-form and chat-oriented messaging in general gives an
+expectation of an immediate reply. If you've ever been pinged for non-urgent
+items when you're in the middle of something, you know how distracting it can
+be! It's super easy to get into this trap and reinforce it unknowingly.
 
 There isn't much you can do here when using chat platforms. The nature of the
 tool itself has a heavy focus on being present and online. **Turning on "Do
@@ -69,7 +47,7 @@ out threaded conversation platforms such as
 [Threads.com](https://threads.com/), [Twist](https://twist.com), or
 [Zulip](https://zulip.com/) if you're into open source. They work more like
 e-mails than chats, and **makes long-form focused conversations easy**:
-it's context-aware, you always know the topic,  you always know where a
+it's context-aware, you always know the topic, you always know where a
 conversation starts and where it ends (how far back up did you have to scroll
 on Slack the last time you were looped into an ongoing conversation? ;-)).
 

@@ -1,5 +1,5 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
-import Link from 'next/link'
+import Link from '@/components/link'
 import React from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
@@ -20,20 +20,20 @@ const UL = styled.ul`
 
 const H2 = styled.h2`
   font-size: 1.4rem;
-  margin: 1.1rem 0;
-  font-weight: 800;
+  margin: 1.3rem 0;
+  font-weight: 900;
 `
 
 const H3 = styled.h3`
   font-size: 1.3rem;
-  margin: 1.1rem 0;
-  font-weight: 700;
+  margin: 1.3rem 0;
+  font-weight: 800;
 `
 
 const H4 = styled.h4`
   font-size: 1.2rem;
-  margin: 1.1rem 0;
-  font-weight: 600;
+  margin: 1.3rem 0;
+  font-weight: 700;
 `
 
 const P = styled.p`
@@ -50,28 +50,30 @@ const HWithAnchor: React.FC<{
   children: React.ReactNode
 }> = ({ h, id, children }) => {
   const anchor = (
-    <Link
-      href={`#${id}`}
-      className="absolute left-[-2%] opacity-20 hover:opacity-100"
-    >
+    <Link href={`#${id}`} className="opacity-20 hover:opacity-100">
       #
     </Link>
   )
   return match(h)
     .with('h2', () => (
       <H2 id={id} className="relative">
-        {anchor} {children}
+        {children} {anchor}
       </H2>
     ))
     .with('h3', () => (
       <H3 id={id} className="relative">
-        {anchor} {children}
+        {children} {anchor}
       </H3>
     ))
     .exhaustive()
 }
 
 const components = {
+  a: (props: any) => (
+    <Link variant="underline" {...props}>
+      {props.children}
+    </Link>
+  ),
   blockquote: (props: any) => (
     <blockquote
       {...props}
@@ -121,6 +123,7 @@ const components = {
         useInlineStyles
         showLineNumbers
         customStyle={{
+          borderRadius: '10px',
           fontSize: '1.1rem',
           marginTop: '1rem',
           marginBottom: '1rem',
