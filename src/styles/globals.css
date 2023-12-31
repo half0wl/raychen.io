@@ -13,35 +13,22 @@ body {
 
 body {
   font-family: 'Inter', sans-serif;
-  overflow-wrap: break-all;
-  overflow: scroll;
-  white-space: normal;
-  background-color: #fff4e0;
-  color: #2d2821;
 }
 
-main a {
-  color: #aa3d3d;
-  font-weight: 600;
-}
-
-article h1 a {
-  color: unset;
-}
-
-main a:hover,
-nav a:hover,
-nav ul a:hover {
-  color: #aa3d3d;
-  text-decoration: underline;
+.list-disc {
+  list-style-type: square !important;
 }
 
 :not(pre) > code {
-  background-color: #ffddb7;
+  background-color: #424242;
   font-size: 16px;
-  padding: 4px 8px;
+  padding: 2px 6px;
   border-radius: 10px;
   font-weight: 600;
+}
+
+a > code {
+  text-decoration: underline;
 }
 
 :not(pre) > h2 code {

@@ -10,7 +10,7 @@ export default function Document() {
         rel="stylesheet"
       />
       <Head />
-      <body>
+      <body className="mx-auto max-w-[960px] overflow-y-scroll whitespace-normal bg-slate-900 p-4 text-orange-100">
         <Main />
         <NextScript />
       </body>

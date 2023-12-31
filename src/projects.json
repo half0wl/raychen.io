@@ -1,0 +1,50 @@
+[
+  {
+    "name": "raychen.io",
+    "link": "https://github.com/half0wl/raychen.io",
+    "desc": "You're here!",
+    "emoji": "🟢"
+  },
+  {
+    "name": "money.ts",
+    "link": "https://github.com/half0wl/money.ts",
+    "desc": "A TypeScript library for working with monetary values",
+    "emoji": "🟢"
+  },
+  {
+    "name": "openai-api-playground",
+    "link": "https://github.com/half0wl/openai-api-playground",
+    "desc": "An alternative UI for experimenting with ChatGPT API",
+    "emoji": "🟢"
+  },
+  {
+    "name": "php-statemachine",
+    "link": "https://github.com/half0wl/php-statemachine",
+    "desc": "A PHP library to simplify working with state machine",
+    "emoji": "🟠"
+  },
+  {
+    "name": "railway-chord",
+    "link": "https://github.com/half0wl/railway-chord",
+    "desc": "Log egress for railway.app projects",
+    "emoji": "🪦"
+  },
+  {
+    "name": "tg-mac-remote",
+    "link": "https://github.com/half0wl/tg-mac-remote",
+    "desc": "Remote-control macOS using a Telegram chatbot",
+    "emoji": "🪦"
+  },
+  {
+    "name": "simon",
+    "link": "https://github.com/half0wl/simon",
+    "desc": "Minimal macOS menu bar system monitor",
+    "emoji": "🪦"
+  },
+  {
+    "name": "datagovsg-api",
+    "link": "https://github.com/half0wl/datagovsg_api",
+    "desc": "Python API wrapper for data.gov.sg",
+    "emoji": "🪦"
+  }
+]
