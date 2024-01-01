@@ -7,11 +7,12 @@ import styled from 'styled-components'
 import { match } from 'ts-pattern'
 
 const UL = styled.ul`
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.6em;
   letter-spacing: -0.15px;
   list-style-type: square;
+  margin-top: 1em;
   margin-left: 2em;
   li {
     margin-bottom: 0.6em;
