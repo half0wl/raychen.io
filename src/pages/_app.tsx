@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <aside className="flex items-center justify-between border-b border-slate-700 py-3">
           <span>
             <Link className="text-xl font-extrabold tracking-tighter" href="/">
-              raychen.io
+              Ray Chen
             </Link>
           </span>
           <ul className="flex flex-row items-center space-x-4">
