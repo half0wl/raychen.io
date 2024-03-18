@@ -38,16 +38,18 @@ const Home: React.FC<ComponentProps> = ({ articles, projects }) => {
               />
             </figure>
             <p className="text-lg">
-              Hi, I’m{' '}
-              <span className="text-2xl font-bold tracking-tighter">Ray</span>.
-              I enjoy building stuff at the intersection of software, humans,
-              & infrastructure.
+              Hi, I’m <span className="font-bold tracking-tighter">Ray</span>. I
+              enjoy building stuff at the intersection of software, humans, &
+              infrastructure.
             </p>
           </div>
         </article>
         <div className="mt-8 space-y-6">
           <div className="space-y-2">
-            <p className="text-lg font-bold underline">🖊️ Writing</p>
+            <p className="text-lg font-bold">🖊️ Scratchpad</p>
+            <span className="text-sm text-slate-300">
+              Essays, notes, and musings.
+            </span>
             <ul className="space-y-2">
               {articles.map((a) => (
                 <ArticleItem key={a.slug} article={a} />
@@ -55,7 +57,7 @@ const Home: React.FC<ComponentProps> = ({ articles, projects }) => {
             </ul>
           </div>
           <div className="space-y-2">
-            <p className="text-lg font-bold underline">🛠️ Projects</p>
+            <p className="text-lg font-bold">🛠️ Projects</p>
             <ul className="space-y-2">
               {projects.map((p) => (
                 <ProjectItem key={p.link} project={p} />
